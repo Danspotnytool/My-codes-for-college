@@ -219,6 +219,46 @@ char *dot[6] = {
     "     ",
     " [#] "
 };
+char *comma[6] = {
+    "     ",
+    "     ",
+    "     ",
+    "     ",
+    " [#] ",
+    " _#] "
+};
+char *colon[6] = {
+    "     ",
+    " [#] ",
+    " [#] ",
+    "     ",
+    " [#] ",
+    " [#] "
+};
+char *semicolon[6] = {
+    "     ",
+    " [#] ",
+    " [#] ",
+    "     ",
+    " [#] ",
+    " _#] "
+};
+char *exclamation[6] = {
+    " [#] ",
+    " [#] ",
+    " [#] ",
+    " [#] ",
+    "     ",
+    " [#] "
+};
+char *question[6] = {
+    "  /--\\  ",
+    " /    \\ ",
+    "      | ",
+    "     /  ",
+    "        ",
+    "   [#]  "
+};
 
 char *empty[6] = {
     "",
@@ -252,13 +292,14 @@ void main() {
     nameOpening = merge(nameOpening, a);
     nameOpening = merge(nameOpening, m);
     nameOpening = merge(nameOpening, e);
-    for (int i = 0; i < 6; i++) {
-        printf("%s", nameOpening[i]);
-        printf("\n");
-    };
+
+    // List all allowed characters
+    char *allowed = "abcdefghijklmnopqrstuvwxyz.,:;!";
+    // Get the length of the allowed characters
+    int allowedLength = strlen(allowed);
 
     // Save all the letters in an array of arrays
-    char ***lettersArt = malloc(sizeof(char **) * 26);
+    char ***lettersArt = malloc(sizeof(char **) * allowedLength);
     lettersArt[0] = a; lettersArt[1] = b; lettersArt[2] = c;
     lettersArt[3] = d; lettersArt[4] = e; lettersArt[5] = f;
     lettersArt[6] = g; lettersArt[7] = h; lettersArt[8] = i;
@@ -268,13 +309,10 @@ void main() {
     lettersArt[18] = s; lettersArt[19] = t; lettersArt[20] = u;
     lettersArt[21] = v; lettersArt[22] = w; lettersArt[23] = x;
     lettersArt[24] = y; lettersArt[25] = z; lettersArt[26] = dot;
+    lettersArt[27] = comma; lettersArt[28] = colon; lettersArt[29] = semicolon;
+    lettersArt[30] = exclamation;
 
-    // List all allowed characters
-    char *allowed = "abcdefghijklmnopqrstuvwxyz.";
-
-    char name[] = "Daniel John E. Baynosa";
-    printf("Name: %s", name);
-    printf("\n");
+    char name[] = "The instability of C language kinda sucks";
     // Convert the name to lowercase
     for (int i = 0; i < strlen(name); i++) {
         name[i] = tolower(name[i]);
@@ -285,6 +323,7 @@ void main() {
     char *word = strtok(name, " ");
     while (word != NULL) {
         words[wordCount] = word;
+        printf("%s ", word);
         wordCount++;
         word = strtok(NULL, " ");
     };
