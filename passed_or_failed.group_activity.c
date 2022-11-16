@@ -23,10 +23,18 @@
 #include <stdlib.h>
 
 #define log printf
+#define RED   "\x1B[31m"
+#define GREEN   "\x1B[32m"
+#define YELLOW   "\x1B[33m"
+#define BLUE   "\x1B[34m"
+#define MAGENTA   "\x1B[35m"
+#define CYAN   "\x1B[36m"
+#define WHITE   "\x1B[37m"
+#define RESET "\x1B[0m"
 
 int main() {
     log("******************************************************\n");
-    log("#              Lecture Grade Calculator              #\n");
+    log("#              " BLUE "Lecture Grade Calculator" RESET "              #\n");
     log("******************************************************\n");
 
     // Variable Declaration
@@ -74,32 +82,44 @@ int main() {
 
     // Output
     log("******************************************************\n");
-    log("#              Lecture Grade Calculator              #\n");
+    log("#              " BLUE "Lecture Grade Calculator" RESET "              #\n");
     log("******************************************************\n");
-    log("| Quiz Grade%-15s: %.2f %%", "", quizGrade);
+    log("| Quiz Grade%-15s: ", "");
+        if (quizGrade >= 75) log(GREEN "%.2f %%" RESET "", quizGrade);
+        else log(RED "%.2f %%" RESET "", quizGrade);
     for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", quizGrade); i++) log(" ");
     log("|\n");
 
-    log("| Assignment Grade%-9s: %.2f %%", "", assignmentGrade);
+    log("| Assignment Grade%-9s: ", "");
+        if (assignmentGrade >= 75) log(GREEN "%.2f %%" RESET "", assignmentGrade);
+        else log(RED "%.2f %%" RESET "", assignmentGrade);
     for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", assignmentGrade); i++) log(" ");
     log("|\n");
 
-    log("| Project Grade%-12s: %.2f %%", "", projectGrade);
+    log("| Project Grade%-12s: ", "");
+        if (projectGrade >= 75) log(GREEN "%.2f %%" RESET "", projectGrade);
+        else log(RED "%.2f %%" RESET "", projectGrade);
     for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", projectGrade); i++) log(" ");
     log("|\n");
 
-    log("| Class Standing Grade%-5s: %.2f %%", "", classStandingGrade);
+    log("| Class Standing Grade%-5s: ", "");
+        if (classStandingGrade >= 75) log(GREEN "%.2f %%" RESET "", classStandingGrade);
+        else log(RED "%.2f %%" RESET "", classStandingGrade);
     for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", classStandingGrade); i++) log(" ");
     log("|\n");
 
-    log("| Major Exam Grade%-9s: %.2f %%", "", majorExamGrade);
+    log("| Major Exam Grade%-9s: ", "");
+        if (majorExamGrade >= 75) log(GREEN "%.2f %%" RESET "", majorExamGrade);
+        else log(RED "%.2f %%" RESET "", majorExamGrade);
     for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", majorExamGrade); i++) log(" ");
     log("|\n");
     log("******************************************************\n");
-    log("# Equivalent Lecture Grade%-1s: %.2f %%", "", lectureGrade);
+    log("# Equivalent Lecture Grade%-1s: ", "");
+        if (lectureGrade >= 75) log(GREEN "%.2f %%" RESET "", lectureGrade);
+        else log(RED "%.2f %%" RESET "", lectureGrade);
     for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", lectureGrade); i++) log(" ");
     log("#\n");
-    log("# Remarks%-18s: %-24s#\n", "", lectureGrade >= 75 ? "Passed" : "Failed");
+    log("# Remarks%-18s: %-33s#\n", "", lectureGrade >= 75 ? GREEN "Passed" RESET : RED "Failed" RESET);
     log("******************************************************\n");
 
     return 0;
