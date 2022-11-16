@@ -4,4 +4,4 @@
 set FILENAME=%1
 
 @REM gcc FILENAME.c && a.exe
-gcc %FILENAME% && a.exe
+gcc %FILENAME% -lm && ./a.exe
