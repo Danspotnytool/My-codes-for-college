@@ -89,17 +89,12 @@ int main() {
     log("******************************************************\n");
 
     // Prompts
-    char promptforQuizGrade[] = "";
-    char promptforAssignmentGrade[] = "";
-    char promptforProjectGrade[] = "";
-    char promptforClassStandingGrade[] = "";
-    char promptforMajorExamGrade[] = "";
     // Assigning string to the prompts
-        promptforQuizGrade[100] = "| Quiz Grade%-15s: ";
-        promptforAssignmentGrade[100] = "| Assignment Grade%-9s: ";
-        promptforProjectGrade[100] = "| Project Grade%-12s: ";
-        promptforClassStandingGrade[100] = "| Class Standing Grade%-5s: ";
-        promptforMajorExamGrade[100] = "| Major Exam Grade%-9s: ";
+    char promptforQuizGrade[100] = "| Quiz Grade%-15s: ";
+    char promptforAssignmentGrade[100] = "| Assignment Grade%-9s: ";
+    char promptforProjectGrade[100] = "| Project Grade%-12s: ";
+    char promptforClassStandingGrade[100] = "| Class Standing Grade%-5s: ";
+    char promptforMajorExamGrade[100] = "| Major Exam Grade%-9s: ";
 
     // Output prompts
     char quizGradeString[10];
