@@ -72,7 +72,7 @@ int main() {
             fprintf(stderr, "Error: Invalid input. Please try again.\n");
             return 1;
     };
-    
+
     // Clearing the screen
     #ifdef _WIN32
         system("cls");
@@ -84,42 +84,74 @@ int main() {
     log("******************************************************\n");
     log("#              " BLUE "Lecture Grade Calculator" RESET "              #\n");
     log("******************************************************\n");
-    log("| Quiz Grade%-15s: ", "");
-        if (quizGrade >= 75) log(GREEN "%.2f %%" RESET "", quizGrade);
-        else log(RED "%.2f %%" RESET "", quizGrade);
-    for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", quizGrade); i++) log(" ");
-    log("|\n");
 
-    log("| Assignment Grade%-9s: ", "");
-        if (assignmentGrade >= 75) log(GREEN "%.2f %%" RESET "", assignmentGrade);
-        else log(RED "%.2f %%" RESET "", assignmentGrade);
-    for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", assignmentGrade); i++) log(" ");
-    log("|\n");
+    // Prompts
+    char promptforQuizGrade[] = "| Quiz Grade%-15s: ";
+    char promptforAssignmentGrade[] = "| Assignment Grade%-9s: ";
+    char promptforProjectGrade[] = "| Project Grade%-12s: ";
+    char promptforClassStandingGrade[] = "| Class Standing Grade%-5s: ";
+    char promptforMajorExamGrade[] = "| Major Exam Grade%-9s: ";
 
-    log("| Project Grade%-12s: ", "");
-        if (projectGrade >= 75) log(GREEN "%.2f %%" RESET "", projectGrade);
-        else log(RED "%.2f %%" RESET "", projectGrade);
-    for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", projectGrade); i++) log(" ");
-    log("|\n");
+    // Output prompts
+    // Converting the float to string
+    // (Ignore the `sprintf` because it's not a part of the task. It's just there for beautiful output)
+    char quizGradeString[10];
+        sprintf(quizGradeString, "%.2f %%", quizGrade);
+    char assignmentGradeString[10];
+        sprintf(assignmentGradeString, "%.2f %%", assignmentGrade);
+    char projectGradeString[10];
+        sprintf(projectGradeString, "%.2f %%", projectGrade);
+    char classStandingGradeString[10];
+        sprintf(classStandingGradeString, "%.2f %%", classStandingGrade);
+    char majorExamGradeString[10];
+        sprintf(majorExamGradeString, "%.2f %%", majorExamGrade);
 
-    log("| Class Standing Grade%-5s: ", "");
-        if (classStandingGrade >= 75) log(GREEN "%.2f %%" RESET "", classStandingGrade);
-        else log(RED "%.2f %%" RESET "", classStandingGrade);
-    for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", classStandingGrade); i++) log(" ");
-    log("|\n");
+    // Output
+    log(promptforQuizGrade, "");
+        if (quizGrade >= 75) {
+            log(GREEN "%-24s" RESET "|", quizGradeString);
+        } else {
+            log(RED "%-24s" RESET "|", quizGradeString);
+        }; log("\n");
+    log(promptforAssignmentGrade, "");
+        if (assignmentGrade >= 75) {
+            log(GREEN "%-24s" RESET "|", assignmentGradeString);
+        } else {
+            log(RED "%-24s" RESET "|", assignmentGradeString);
+        }; log("\n");
+    log(promptforProjectGrade, "");
+        if (projectGrade >= 75) {
+            log(GREEN "%-24s" RESET "|", projectGradeString);
+        } else {
+            log(RED "%-24s" RESET "|", projectGradeString);
+        }; log("\n");
+    log(promptforClassStandingGrade, "");
+        if (classStandingGrade >= 75) {
+            log(GREEN "%-24s" RESET "|", classStandingGradeString);
+        } else {
+            log(RED "%-24s" RESET "|", classStandingGradeString);
+        }; log("\n");
+    log(promptforMajorExamGrade, "");
+        if (majorExamGrade >= 75) {
+            log(GREEN "%-24s" RESET "|", majorExamGradeString);
+        } else {
+            log(RED "%-24s" RESET "|", majorExamGradeString);
+        }; log("\n");
 
-    log("| Major Exam Grade%-9s: ", "");
-        if (majorExamGrade >= 75) log(GREEN "%.2f %%" RESET "", majorExamGrade);
-        else log(RED "%.2f %%" RESET "", majorExamGrade);
-    for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", majorExamGrade); i++) log(" ");
-    log("|\n");
-    log("******************************************************\n");
-    log("# Equivalent Lecture Grade%-1s: ", "");
-        if (lectureGrade >= 75) log(GREEN "%.2f %%" RESET "", lectureGrade);
-        else log(RED "%.2f %%" RESET "", lectureGrade);
-    for (int i = 0; i < 22 - snprintf(NULL, 0, "%.2f", lectureGrade); i++) log(" ");
-    log("#\n");
-    log("# Remarks%-18s: %-33s#\n", "", lectureGrade >= 75 ? GREEN "Passed" RESET : RED "Failed" RESET);
+    log("|----------------------------------------------------|\n");
+    char promptforLectureGrade[] = "| Equivalent Lecture Grade%-1s: ";
+    char lectureGradeString[10];
+        sprintf(lectureGradeString, "%.2f %%", lectureGrade);
+    log(promptforLectureGrade, "");
+        if (lectureGrade >= 75) {
+            log(GREEN "%-24s" RESET "|", lectureGradeString);
+        } else {
+            log(RED "%-24s" RESET "|", lectureGradeString);
+        }; log("\n");
+
+    // Label
+    log("|----------------------------------------------------|\n");
+    log("| %-19s" GREEN "Passed" RESET " " RED "Failed" RESET "%-19s|\n", "", "");
     log("******************************************************\n");
 
     return 0;
