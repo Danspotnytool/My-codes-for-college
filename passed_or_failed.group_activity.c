@@ -29,6 +29,13 @@
 #define RESET   "\x1B[0m"
 
 int main() {
+    // Clearing the screen because the program would not include colors unless the screen is cleared
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+
     log("******************************************************\n");
     log("#              " BLUE "Lecture Grade Calculator" RESET "              #\n");
     log("******************************************************\n");
