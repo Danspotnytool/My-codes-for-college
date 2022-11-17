@@ -57,14 +57,6 @@ int main() {
     log("| Major Exam Grade%-9s: ", "");
     scanf(" %e", &majorExamGrade);
 
-    // Calulating the Equivalent Lecture Grade
-    lectureGrade =
-        (quizGrade * 0.15) +
-        (assignmentGrade * 0.15) +
-        (projectGrade * 0.2) +
-        (classStandingGrade * 0.1) +
-        (majorExamGrade * 0.4);
-
     // Make sure that all inputs are valid
     // (Less than or equal to 100, and greater than or equal to 0)
     if (!(quizGrade <= 100 && quizGrade >= 0) ||
@@ -75,6 +67,14 @@ int main() {
             fprintf(stderr, "Error: Invalid input. Please try again.\n");
             return 1;
     };
+
+    // Calulating the Equivalent Lecture Grade
+    lectureGrade =
+        (quizGrade * 0.15) +
+        (assignmentGrade * 0.15) +
+        (projectGrade * 0.2) +
+        (classStandingGrade * 0.1) +
+        (majorExamGrade * 0.4);
 
     // Clearing the screen
     #ifdef _WIN32
@@ -89,24 +89,30 @@ int main() {
     log("******************************************************\n");
 
     // Prompts
-    char promptforQuizGrade[] = "| Quiz Grade%-15s: ";
-    char promptforAssignmentGrade[] = "| Assignment Grade%-9s: ";
-    char promptforProjectGrade[] = "| Project Grade%-12s: ";
-    char promptforClassStandingGrade[] = "| Class Standing Grade%-5s: ";
-    char promptforMajorExamGrade[] = "| Major Exam Grade%-9s: ";
+    char promptforQuizGrade[] = "";
+    char promptforAssignmentGrade[] = "";
+    char promptforProjectGrade[] = "";
+    char promptforClassStandingGrade[] = "";
+    char promptforMajorExamGrade[] = "";
+    // Assigning string to the prompts
+        promptforQuizGrade[100] = "| Quiz Grade%-15s: ";
+        promptforAssignmentGrade[100] = "| Assignment Grade%-9s: ";
+        promptforProjectGrade[100] = "| Project Grade%-12s: ";
+        promptforClassStandingGrade[100] = "| Class Standing Grade%-5s: ";
+        promptforMajorExamGrade[100] = "| Major Exam Grade%-9s: ";
 
     // Output prompts
+    char quizGradeString[10];
+    char assignmentGradeString[10];
+    char projectGradeString[10];
+    char classStandingGradeString[10];
+    char majorExamGradeString[10];
     // Converting the float to string
     // (Ignore the `sprintf` because it's not a part of the task. It's just there for beautiful output)
-    char quizGradeString[10];
         sprintf(quizGradeString, "%.2f %%", quizGrade);
-    char assignmentGradeString[10];
         sprintf(assignmentGradeString, "%.2f %%", assignmentGrade);
-    char projectGradeString[10];
         sprintf(projectGradeString, "%.2f %%", projectGrade);
-    char classStandingGradeString[10];
         sprintf(classStandingGradeString, "%.2f %%", classStandingGrade);
-    char majorExamGradeString[10];
         sprintf(majorExamGradeString, "%.2f %%", majorExamGrade);
 
     // Output
