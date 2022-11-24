@@ -98,10 +98,10 @@ int main() {
         part2_question10[200] = "A programming language construct or operator that tests or defines some kind of relation between two entities.\n";
 
     // All of the answers for all of the questions
-    char part1_answer1 = 'C',
-        part1_answer2 = 'A',
+    char part1_answer1 = 'A',
+        part1_answer2 = 'B',
         part1_answer3 = 'D',
-        part1_answer4 = 'B',
+        part1_answer4 = 'D',
         part1_answer5 = 'B',
         part1_answer6 = 'C',
         part1_answer7 = 'A',
