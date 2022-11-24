@@ -72,7 +72,7 @@ int main() {
     // Initialization of the score
     int part1_score = 0,
         part2_score = 0,
-        total_score;
+        final_score;
 
     // All of the questions
     char part1_question1[200] = "Who is the father of C Progmramming Language?\n\tA. DENNIS RITCHIE\n\tB. MARIAN RIVERA\n\tC. DENNIS RITCHEI\n\tD. DENNIS RITCHEESE\n",
@@ -342,7 +342,7 @@ int main() {
     }; log("\n");
 
     // Total score
-    total_score = part1_score + part2_score;
+    final_score = part1_score + part2_score;
 
     // Clearing the screen
     #ifdef _WIN32
@@ -357,114 +357,114 @@ int main() {
     log("|############################|\n");
     log("| Part 1:%-20s|\n", "");
     if (part1_responce1 == part1_answer1) {
-        log("|  1. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  1. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  1. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  1. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (part1_responce2 == part1_answer2) {
-        log("|  2. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  2. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  2. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  2. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (part1_responce3 == part1_answer3) {
-        log("|  3. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  3. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  3. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  3. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (part1_responce4 == part1_answer4) {
-        log("|  4. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  4. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  4. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  4. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (part1_responce5 == part1_answer5) {
-        log("|  5. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  5. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  5. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  5. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (part1_responce6 == part1_answer6) {
-        log("|  6. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  6. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  6. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  6. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (part1_responce7 == part1_answer7) {
-        log("|  7. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  7. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  7. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  7. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (part1_responce8 == part1_answer8) {
-        log("|  8. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  8. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  8. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  8. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (part1_responce9 == part1_answer9) {
-        log("|  9. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  9. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  9. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  9. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (part1_responce10 == part1_answer10) {
-        log("| 10. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("| 10. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("| 10. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("| 10. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     log("|----------------------------|\n");
-    log("| Total score: %d/10         |\n", part1_score);
+    log("| Total score: %-14d|\n", part1_score);
     log("|----------------------------|\n");
 
     log("| Part 2:%-20s|\n", "");
     if (strcmp(part2_responce1, part2_answer1) == 0) {
-        log("|  1. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  1. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  1. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  1. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (strcmp(part2_responce2, part2_answer2) == 0) {
-        log("|  2. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  2. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  2. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  2. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (strcmp(part2_responce3, part2_answer3) == 0) {
-        log("|  3. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  3. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  3. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  3. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (strcmp(part2_responce4, part2_answer4) == 0) {
-        log("|  4. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  4. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  4. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  4. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (strcmp(part2_responce5, part2_answer5) == 0) {
-        log("|  5. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  5. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  5. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  5. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (strcmp(part2_responce6, part2_answer6) == 0) {
-        log("|  6. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  6. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  6. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  6. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (strcmp(part2_responce7, part2_answer7) == 0) {
-        log("|  7. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  7. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  7. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  7. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (strcmp(part2_responce8, part2_answer8) == 0) {
-        log("|  8. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  8. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  8. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  8. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (strcmp(part2_responce9, part2_answer9) == 0) {
-        log("|  9. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("|  9. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("|  9. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("|  9. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     if (strcmp(part2_responce10, part2_answer10) == 0) {
-        log("| 10. %s%-16s|\n", GREEN "Correct" RESET, "");
+        log("| 10. " GREEN "Correct" RESET "%-16s|\n", "");
     } else {
-        log("| 10. %s%-16s|\n", RED "Incorrect" RESET, "");
+        log("| 10. " RED "Incorrect" RESET "%-14s|\n", "");
     };
     log("|----------------------------|\n");
-    log("| Total score: %d/10         |\n", part2_score);
+    log("| Total score: %-14d|\n", part2_score);
     log("|############################|\n");
-    log("| Final score: %d/20         |\n", total_score);
+    log("| Final score: %-14d|\n", final_score);
     log("|############################|\n");
 
     return 0;
