@@ -91,27 +91,27 @@ int main() {
         total_score;
 
     // All of the questions
-    char part1_question1[200] = "Who is the father of C Progmramming Language?\n\tA. DENNIS RITCHIE\n\tB. MARIAN RIVERA\n\tC. DENNIS RITCHEI\n\tD. DENNIS RITCHEESE\n",
-        part1_question2[200] = "What year does C language was first developed?\n\tA. 1872\n\tB. 1972\n\tC. 1892\n\tD. 1982\n",
-        part1_question3[200] = "It reads the entire program and converts it into a form that can be executed by the computer.\n\tA. LIBRARY\n\tB. RUN TIME\n\tC. INTERPRETER\n\tD. COMPILER\n",
-        part1_question4[200] = "Refer to the event that occur while the program is actually executing.\n\tA. INTERPRETER TIME\n\tB. SWITCH TIME\n\tC. COMPILE TIME\n\tD. RUN TIME\n",
-        part1_question5[200] = "A line character that is used to move the cursor to the next line.\n\tA. %%\n\tB. \n\n\tC. ""\n\tD. &\n",
-        part1_question6[200] = "It is used to identify the input, process, and output function.\n\tA. BLUEPRINT\n\tB. DEFINE DIRECTIVES\n\tC. FLOWCHARTING\n\tD. PREPARATION\n",
-        part1_question7[200] = "Program statement used for handling data from the user\n\tA. INPUT STATEMENT\n\tB. OUTPUT STATEMENT\n\tC. INSIDE INPUT\n\tD. OUTSIDE STATEMENT\n",
-        part1_question8[200] = "One of the types of variables that change their value after processing.\n\tA. FATAL VARIABLE\n\tB. DESTRUCTIVE VARIABLE\n\tC. DEVASTATIVE VARIABLE\n\tD. DEDUCTIVE VARIABLE\n",
-        part1_question9[200] = "In the arithmetic-logic unit (which is within the CPU), mathematical operation like: addition, subtraction, multiplication, and division are done.\n\tA. HITLEVEL\n\tB. GIT LEVEL\n\tC. BIT LEVEL\n\tD. KIIT\n",
-        part1_question10[200] = "Used for the computer to choose one and only one of the given choices.\n\tA. TEMPORIZE IF STATEMENT\n\tB. LINEARIZE IF ELSE IF STATEMENT\n\tC. NESTED STATEMENT\n\tD. LADDERIZED IF ELSE IF STATEMENT\n",
+    char part1_question1[210] = " 1. Who is the father of C Progmramming Language?\n\tA. DENNIS RITCHIE\n\tB. MARIAN RIVERA\n\tC. DENNIS RITCHEI\n\tD. DENNIS RITCHEESE\n",
+        part1_question2[210] = " 2. What year does C language was first developed?\n\tA. 1872\n\tB. 1972\n\tC. 1892\n\tD. 1982\n",
+        part1_question3[210] = " 3. It reads the entire program and converts it into a form that can be executed by the computer.\n\tA. LIBRARY\n\tB. RUN TIME\n\tC. INTERPRETER\n\tD. COMPILER\n",
+        part1_question4[210] = " 4. Refer to the event that occur while the program is actually executing.\n\tA. INTERPRETER TIME\n\tB. SWITCH TIME\n\tC. COMPILE TIME\n\tD. RUN TIME\n",
+        part1_question5[210] = " 5. A line character that is used to move the cursor to the next line.\n\tA. %%\n\tB. \n\n\tC. ""\n\tD. &\n",
+        part1_question6[210] = " 6. It is used to identify the input, process, and output function.\n\tA. BLUEPRINT\n\tB. DEFINE DIRECTIVES\n\tC. FLOWCHARTING\n\tD. PREPARATION\n",
+        part1_question7[210] = " 7. Program statement used for handling data from the user\n\tA. INPUT STATEMENT\n\tB. OUTPUT STATEMENT\n\tC. INSIDE INPUT\n\tD. OUTSIDE STATEMENT\n",
+        part1_question8[210] = " 8. One of the types of variables that change their value after processing.\n\tA. FATAL VARIABLE\n\tB. DESTRUCTIVE VARIABLE\n\tC. DEVASTATIVE VARIABLE\n\tD. DEDUCTIVE VARIABLE\n",
+        part1_question9[210] = " 9. In the arithmetic-logic unit (which is within the CPU), mathematical operation like: addition, subtraction, multiplication, and division are done.\n\tA. HITLEVEL\n\tB. GIT LEVEL\n\tC. BIT LEVEL\n\tD. KIIT\n",
+        part1_question10[210] = "10. Used for the computer to choose one and only one of the given choices.\n\tA. TEMPORIZE IF STATEMENT\n\tB. LINEARIZE IF ELSE IF STATEMENT\n\tC. NESTED STATEMENT\n\tD. LADDERIZED IF ELSE IF STATEMENT\n",
 
-        part2_question1[200] = "A primary storage location that can hold different numeric or alphanumeric values.\n",
-        part2_question2[200] = "A finite set of instructions that specify a sequence of operations to be carried out in order to solve a specific problem or class of problems.\n",
-        part2_question3[200] = "A logical operator that if both the operands are non-zero, then the condition becomes true.\n",
-        part2_question4[200] = "In this conditional statement, there are two given choices the computer could make. Futhermore, the computer could only choose one of them.\n",
-        part2_question5[200] = "It is used for testing program and locating programming errors.\n",
-        part2_question6[200] = "It represents text, computer processor instructions, or any other data using a two-symbol system.\n",
-        part2_question7[200] = "If any of the two operands is non-zero, then the condition becomes true.\n",
-        part2_question8[200] = "Variables that maintain its value after processing.\n",
-        part2_question9[200] = "Used to display the argument list on the monitor.\n",
-        part2_question10[200] = "A programming language construct or operator that tests or defines some kind of relation between two entities.\n";
+        part2_question1[210] = " 1. A primary storage location that can hold different numeric or alphanumeric values.\n",
+        part2_question2[210] = " 2. A finite set of instructions that specify a sequence of operations to be carried out in order to solve a specific problem or class of problems.\n",
+        part2_question3[210] = " 3. A logical operator that if both the operands are non-zero, then the condition becomes true.\n",
+        part2_question4[210] = " 4. In this conditional statement, there are two given choices the computer could make. Futhermore, the computer could only choose one of them.\n",
+        part2_question5[210] = " 5. It is used for testing program and locating programming errors.\n",
+        part2_question6[210] = " 6. It represents text, computer processor instructions, or any other data using a two-symbol system.\n",
+        part2_question7[210] = " 7. If any of the two operands is non-zero, then the condition becomes true.\n",
+        part2_question8[210] = " 8. Variables that maintain its value after processing.\n",
+        part2_question9[210] = " 9. Used to display the argument list on the monitor.\n",
+        part2_question10[210] = " 10. A programming language construct or operator that tests or defines some kind of relation between two entities.\n";
 
     // All of the answers for all of the questions
     char part1_answer1 = 'A',
