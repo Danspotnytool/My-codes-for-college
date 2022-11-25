@@ -111,7 +111,7 @@ int main() {
         part2_question7[210] = " 7. If any of the two operands is non-zero, then the condition becomes true.\n",
         part2_question8[210] = " 8. Variables that maintain its value after processing.\n",
         part2_question9[210] = " 9. Used to display the argument list on the monitor.\n",
-        part2_question10[210] = " 10. A programming language construct or operator that tests or defines some kind of relation between two entities.\n";
+        part2_question10[210] = "10. A programming language construct or operator that tests or defines some kind of relation between two entities.\n";
 
     // All of the answers for all of the questions
     char part1_answer1 = 'A',
