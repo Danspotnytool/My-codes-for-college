@@ -71,45 +71,54 @@
 
 // 1 = welcome screen, 2 = main menu, 3 sub menu
 int stage = 1;
+int subMenu = 0;
 
 int main() {
     // Clearing the screen because the program would not include colors unless the screen is cleared
     #ifdef _WIN32
+        if (stage == 1) {
+            system("mode con: cols=128 lines=30");
+        } else if (stage == 2) {
+            system("mode con: cols=98 lines=30");
+        };
         system("cls");
-        system("mode con: cols=130 lines=30");
     #else
+        if (stage == 1) {
+            system("resize -s 30 128");
+        } else if (stage == 2) {
+            system("resize -s 30 98");
+        };
         system("clear");
-        system("resize -s 30 130");
     #endif
 
     if (stage == 1) {
         log("\n");
         log(
-            " " LIME_T "        GGGGGGGGGGGGG                                                                               " RESET "      " BLUE_T " 222222222222222    " RESET "   \n"
-            " " LIME_T "     GGG::::::::::::G                                                                               " RESET "      " BLUE_T "2:::::::::::::::22  " RESET "   \n"
-            " " LIME_T "   GG:::::::::::::::G                                                                               " RESET "      " BLUE_T "2::::::222222:::::2 " RESET "   \n"
-            " " LIME_T "  G:::::GGGGGGGG::::G                                                                               " RESET "      " BLUE_T "2222222     2:::::2 " RESET "   \n"
-            " " LIME_T " G:::::G       GGGGGG rrrrr   rrrrrrrrr       ooooooooooo    uuuuuu    uuuuuu   ppppp   ppppppppp   " RESET "      " BLUE_T "            2:::::2 " RESET "   \n"
-            " " LIME_T "G:::::G               r::::rrr:::::::::r    oo:::::::::::oo  u::::u    u::::u   p::::ppp:::::::::p  " RESET "      " BLUE_T "            2:::::2 " RESET "   \n"
-            " " LIME_T "G:::::G               r:::::::::::::::::r  o:::::::::::::::o u::::u    u::::u   p:::::::::::::::::p " RESET "      " BLUE_T "         2222::::2  " RESET "   \n"
-            " " LIME_T "G:::::G    GGGGGGGGGG rr::::::rrrrr::::::r o:::::ooooo:::::o u::::u    u::::u   pp::::::ppppp::::::p" RESET "      " BLUE_T "    22222::::::22   " RESET "   \n"
-            " " LIME_T "G:::::G    G::::::::G  r:::::r     r:::::r o::::o     o::::o u::::u    u::::u    p:::::p     p:::::p" RESET "      " BLUE_T "  22::::::::222     " RESET "   \n"
-            " " LIME_T "G:::::G    GGGGG::::G  r:::::r     rrrrrrr o::::o     o::::o u::::u    u::::u    p:::::p     p:::::p" RESET "      " BLUE_T " 2:::::22222        " RESET "   \n"
-            " " LIME_T "G:::::G        G::::G  r:::::r             o::::o     o::::o u::::u    u::::u    p:::::p     p:::::p" RESET "      " BLUE_T "2:::::2             " RESET "   \n"
-            " " LIME_T " G:::::G       G::::G  r:::::r             o::::o     o::::o u:::::uuuu:::::u    p:::::p    p::::::p" RESET "      " BLUE_T "2:::::2             " RESET "   \n"
-            " " LIME_T "  G:::::GGGGGGGG::::G  r:::::r             o:::::ooooo:::::o u:::::::::::::::uu  p:::::ppppp:::::::p" RESET "      " BLUE_T "2:::::2       222222" RESET "   \n"
-            " " LIME_T "   GG:::::::::::::::G  r:::::r             o:::::::::::::::o  u:::::::::::::::u  p::::::::::::::::p " RESET "      " BLUE_T "2::::::2222222:::::2" RESET "   \n"
-            " " LIME_T "     GGG::::::GGG:::G  r:::::r              oo:::::::::::oo    uu::::::::uu:::u  p::::::::::::::pp  " RESET "      " BLUE_T "2::::::::::::::::::2" RESET "   \n"
-            " " LIME_T "        GGGGGG   GGGG  rrrrrrr                ooooooooooo        uuuuuuuu  uuuu  p::::::pppppppp    " RESET "      " BLUE_T "22222222222222222222" RESET "   \n"
-            " " LIME_T "                                                                                 p:::::p            " RESET "      " BLUE_T "                    " RESET "   \n"
-            " " LIME_T "                                                                                 p:::::p            " RESET "      " BLUE_T "                    " RESET "   \n"
-            " " LIME_T "                                                                                p:::::::p           " RESET "      " BLUE_T "                    " RESET "   \n"
-            " " LIME_T "                                                                                p:::::::p           " RESET "      " BLUE_T "                    " RESET "   \n"
-            " " LIME_T "                                                                                p:::::::p           " RESET "      " BLUE_T "                    " RESET "   \n"
-            " " LIME_T "                                                                                ppppppppp           " RESET "      " BLUE_T "                    " RESET "   \n"
+            " " LIME_T "        GGGGGGGGGGGGG                                                                               " RESET "      " BLUE_T " 222222222222222    " RESET "\n"
+            " " LIME_T "     GGG::::::::::::G                                                                               " RESET "      " BLUE_T "2:::::::::::::::22  " RESET "\n"
+            " " LIME_T "   GG:::::::::::::::G                                                                               " RESET "      " BLUE_T "2::::::222222:::::2 " RESET "\n"
+            " " LIME_T "  G:::::GGGGGGGG::::G                                                                               " RESET "      " BLUE_T "2222222     2:::::2 " RESET "\n"
+            " " LIME_T " G:::::G       GGGGGG rrrrr   rrrrrrrrr       ooooooooooo    uuuuuu    uuuuuu   ppppp   ppppppppp   " RESET "      " BLUE_T "            2:::::2 " RESET "\n"
+            " " LIME_T "G:::::G               r::::rrr:::::::::r    oo:::::::::::oo  u::::u    u::::u   p::::ppp:::::::::p  " RESET "      " BLUE_T "            2:::::2 " RESET "\n"
+            " " LIME_T "G:::::G               r:::::::::::::::::r  o:::::::::::::::o u::::u    u::::u   p:::::::::::::::::p " RESET "      " BLUE_T "         2222::::2  " RESET "\n"
+            " " LIME_T "G:::::G    GGGGGGGGGG rr::::::rrrrr::::::r o:::::ooooo:::::o u::::u    u::::u   pp::::::ppppp::::::p" RESET "      " BLUE_T "    22222::::::22   " RESET "\n"
+            " " LIME_T "G:::::G    G::::::::G  r:::::r     r:::::r o::::o     o::::o u::::u    u::::u    p:::::p     p:::::p" RESET "      " BLUE_T "  22::::::::222     " RESET "\n"
+            " " LIME_T "G:::::G    GGGGG::::G  r:::::r     rrrrrrr o::::o     o::::o u::::u    u::::u    p:::::p     p:::::p" RESET "      " BLUE_T " 2:::::22222        " RESET "\n"
+            " " LIME_T "G:::::G        G::::G  r:::::r             o::::o     o::::o u::::u    u::::u    p:::::p     p:::::p" RESET "      " BLUE_T "2:::::2             " RESET "\n"
+            " " LIME_T " G:::::G       G::::G  r:::::r             o::::o     o::::o u:::::uuuu:::::u    p:::::p    p::::::p" RESET "      " BLUE_T "2:::::2             " RESET "\n"
+            " " LIME_T "  G:::::GGGGGGGG::::G  r:::::r             o:::::ooooo:::::o u:::::::::::::::uu  p:::::ppppp:::::::p" RESET "      " BLUE_T "2:::::2       222222" RESET "\n"
+            " " LIME_T "   GG:::::::::::::::G  r:::::r             o:::::::::::::::o  u:::::::::::::::u  p::::::::::::::::p " RESET "      " BLUE_T "2::::::2222222:::::2" RESET "\n"
+            " " LIME_T "     GGG::::::GGG:::G  r:::::r              oo:::::::::::oo    uu::::::::uu:::u  p::::::::::::::pp  " RESET "      " BLUE_T "2::::::::::::::::::2" RESET "\n"
+            " " LIME_T "        GGGGGG   GGGG  rrrrrrr                ooooooooooo        uuuuuuuu  uuuu  p::::::pppppppp    " RESET "      " BLUE_T "22222222222222222222" RESET "\n"
+            " " LIME_T "                                                                                 p:::::p            " RESET "      " BLUE_T "                    " RESET "\n"
+            " " LIME_T "                                                                                 p:::::p            " RESET "      " BLUE_T "                    " RESET "\n"
+            " " LIME_T "                                                                                p:::::::p           " RESET "      " BLUE_T "                    " RESET "\n"
+            " " LIME_T "                                                                                p:::::::p           " RESET "      " BLUE_T "                    " RESET "\n"
+            " " LIME_T "                                                                                p:::::::p           " RESET "      " BLUE_T "                    " RESET "\n"
+            " " LIME_T "                                                                                ppppppppp           " RESET "      " BLUE_T "                    " RESET "\n"
         );
         log("\n");
-        log("\tDo you want to open the menu? (Y|y|N|n) > ");
+        log(YELLOW_T "Do you want to open the menu? (Y|y|N|n) > " RESET);
         char titleScreenAnswer;
         scanf("%c", &titleScreenAnswer);
 
@@ -171,9 +180,10 @@ int main() {
         log("[=]--------------------------------------------------------------------------------------------[=]\n");
         log("\n");
 
-        log("Please choose the number of the function you want to use > ");
+        log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
         int menuAnswer;
         scanf("%d", &menuAnswer);
+        subMenu = menuAnswer;
         if (menuAnswer >= 1 && menuAnswer <= 8) {
             stage = 3;
             main();
