@@ -76,8 +76,10 @@ int main() {
     // Clearing the screen because the program would not include colors unless the screen is cleared
     #ifdef _WIN32
         system("cls");
+        system("mode con: cols=130 lines=30");
     #else
         system("clear");
+        system("resize -s 30 130");
     #endif
 
     if (stage == 1) {
@@ -143,16 +145,16 @@ int main() {
         log(
             " |%94s|\n"
             " |%94s|\n"
-            " | %-5s[" LIME_T "1" RESET "] %-40s[" LIME_T "2" RESET "] %-40s|\n"
+            " |%-6s[" LIME_T "1" RESET "] %-40s[" LIME_T "2" RESET "] %-40s|\n"
             " |%94s|\n"
             " |%94s|\n"
-            " | %-5s[" LIME_T "3" RESET "] %-40s[" LIME_T "4" RESET "] %-40s|\n"
+            " |%-6s[" LIME_T "3" RESET "] %-40s[" LIME_T "4" RESET "] %-40s|\n"
             " |%94s|\n"
             " |%94s|\n"
-            " | %-5s[" LIME_T "5" RESET "] %-40s[" LIME_T "6" RESET "] %-40s|\n"
+            " |%-6s[" LIME_T "5" RESET "] %-40s[" LIME_T "6" RESET "] %-40s|\n"
             " |%94s|\n"
             " |%94s|\n"
-            " | %-5s[" LIME_T "7" RESET "] %-40s[" LIME_T "8" RESET "] %-40s|\n"
+            " |%-6s[" LIME_T "7" RESET "] %-40s[" LIME_T "8" RESET "] %-40s|\n"
             " |%94s|\n"
             " |%94s|\n",
 
@@ -172,7 +174,13 @@ int main() {
         log("Please choose the number of the function you want to use > ");
         int menuAnswer;
         scanf("%d", &menuAnswer);
-    };
+        if (menuAnswer >= 1 && menuAnswer <= 8) {
+            stage = 3;
+            main();
+        } else {
+            main();
+        };
+    } else if (stage == 3) {};
 
     return 0;
 };
