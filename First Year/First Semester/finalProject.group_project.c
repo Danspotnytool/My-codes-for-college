@@ -34,48 +34,52 @@
 
 /**
  * Area Calculator
- *      Area of Triangle
- *      Area of Circle
- *      Area of Rectangle
- *      Area of Parallelogram
+ *      Area of Triangle (ID: 1)
+ *      Area of Circle (ID: 2)
+ *      Area of Rectangle (ID: 3)
+ *      Area of Parallelogram (ID: 4)
  * 
  * Converter
- *      Temperature Convert
- *          Fahrenheit to Celsius
- *          Celsius To Fahrenheit
- *      Fraction to Whole Number
+ *      Temperature Convert (ID: 1)
+ *          Fahrenheit to Celsius (ID: 5)
+ *          Celsius To Fahrenheit (ID: 6)
+ *      Fraction to Whole Number (ID: 7)
  * 
- * Color Selection
+ * Color Selection (ID: 8)
  * 
- * Resume Creating System
+ * Resume Creating System (ID: 9)
  * 
  * Number Function
- *      Positive or Negative
- *      Age Qualified Voting
- *      Two Number Comparision
- *      Odd or Even
+ *      Positive or Negative (ID: 10)
+ *      Age Qualified Voting (ID: 11)
+ *      Two Number Comparision (ID: 12)
+ *      Odd or Even (ID: 13)
  * 
  * Grading System
- *      Pass or Failed
- *      Grade Calculator
+ *      Pass or Failed (ID: 14)
+ *      Grade Calculator (ID: 15)
  * 
- * Quiz System
+ * Quiz System (ID: 16)
  * 
  * Calculator Function System
- *      Exponential
- *      Multiplication
- *      Division
- *      Addition
- *      Subtraction
+ *      Exponential (ID: 17)
+ *      Multiplication (ID: 18)
+ *      Division (ID: 19)
+ *      Addition (ID: 20)
+ *      Subtraction (ID: 21)
  */
 
-// 1 = welcome screen, 2 = main menu, 3 sub menu
+// 1 = welcome screen, 2 = main menu, 3 sub menu or category, 4 = sub menu or sub category, 5 = choose function, 6 = function
 int stage = 1;
-int subMenu = 0;
+// 1 = area calculator, 2 = converter, 3 = color selection, 4 = resume creating system, 5 = number function, 6 = grading system, 7 = quiz system, 8 = calculator function system
+int category = 0;
+// 1 = Area of Triangle, 2 = Area of Circle, 3 = Area of Rectangle, 4 = Area of Parallelogram, 5 = Fahrenheit to Celsius, 6 = Celsius To Fahrenheit, 7 = Fraction to Whole Number, 8 = Color Selection, 9 = Resume Creating System, 10 = Positive or Negative, 11 = Age Qualified Voting, 12 = Two Number Comparision, 13 = Odd or Even, 14 = Pass or Failed, 15 = Grade Calculator, 16 = Quiz System, 17 = Exponential, 18 = Multiplication, 19 = Division, 20 = Addition, 21 = Subtraction
+int function = 0;
 
 int main() {
     // Clearing the screen because the program would not include colors unless the screen is cleared
     #ifdef _WIN32
+        system("cls");
         if (stage == 1) {
             system("mode con: cols=128 lines=30");
         } else if (stage == 2) {
@@ -83,6 +87,7 @@ int main() {
         };
         system("cls");
     #else
+        system("clear");
         if (stage == 1) {
             system("resize -s 30 128");
         } else if (stage == 2) {
@@ -147,7 +152,6 @@ int main() {
             "", "",
             "", "",
             "", "",
-            "", "",
             "", ""
         );
         log("[=]--------------------------------------------------------------------------------------------[=]\n");
@@ -181,16 +185,133 @@ int main() {
         log("\n");
 
         log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
-        int menuAnswer;
-        scanf("%d", &menuAnswer);
-        subMenu = menuAnswer;
-        if (menuAnswer >= 1 && menuAnswer <= 8) {
+        char menuAnswer;
+        scanf("%c", &menuAnswer);
+        category = menuAnswer;
+        // convert the char to int
+        if (menuAnswer - '0' >= 1 && menuAnswer - '0' <= 8) {
             stage = 3;
             main();
         } else {
             main();
         };
-    } else if (stage == 3) {};
+    } else if (stage == 3) {
+        switch (category) {
+            case '1':
+                stage = 5;
+                log("Area Calculator\n");
+                break;
+            case '2':
+                stage = 4;
+                log("Converter\n");
+                break;
+            case '3':
+                stage = 6;
+                function = 8;
+                log("Color Selection\n");
+                break;
+            case '4':
+                stage = 6;
+                function = 9;
+                log("Resume Creating System\n");
+                break;
+            case '5':
+                stage = 5;
+                log("Number Function\n");
+                break;
+            case '6':
+                stage = 5;
+                log("Grading System\n14936702contro");
+                break;
+            case '7':
+                stage = 6;
+                function = 16;
+                log("Quiz System\n");
+                break;
+            case '8':
+                stage = 5;
+                log("Calculator Function System\n");
+                break;
+            default:
+                break;
+        };
+        main();
+    } else if (stage == 4) {
+        // Special stage for Converter
+        log("\n");
+        log("[=]-----------------------------------------------[=]\n");
+        log(" |%-20sConverter%-20s|\n", "", "");
+        log("[=]-----------------------------------------------[=]\n");
+        log(
+            " |%-49s|\n"
+            " |%-6s[" LIME_T "1" RESET "] Temperature%-28s|\n"
+            " |%-49s|\n"
+            " |%-6s[" LIME_T "2" RESET "] Fraction to Whole Number%-15s|\n"
+            " |%-49s|\n",
+            "",
+            "", "",
+            "",
+            "", "",
+            ""
+        );
+        log("[=]-----------------------------------------------[=]\n");
+        log("\n");
+        log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
+        char converterAnswer;
+        scanf(" %c", &converterAnswer);
+        if (converterAnswer - '0' == 2) {
+            // Fraction to Whole Number
+            stage = 6;
+            function = 7;
+            main();
+        } else if (converterAnswer - '0' == 1) {
+            #ifdef _WIN32
+                system("cls");
+            #else
+                system("clear");
+            #endif
+            log("\n");
+            log("[=]-----------------------------------------------[=]\n");
+            log(" |%-20sConverter%-20s|\n", "", "");
+            log("[=]-----------------------------------------------[=]\n");
+            log(
+                " |%-49s|\n"
+                " |%-6s[" LIME_T "1" RESET "] Fahrenheit to Celsius%-18s|\n"
+                " |%-49s|\n"
+                " |%-6s[" LIME_T "2" RESET "] Celsius to Fahrenheit%-18s|\n"
+                " |%-49s|\n",
+                "",
+                "", "",
+                "",
+                "", "",
+                ""
+            );
+            log("[=]-----------------------------------------------[=]\n");
+            log("\n");
+            log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
+            char converterAnswer2;
+            scanf(" %c", &converterAnswer2);
+            if (converterAnswer2 - '0' == 1) {
+                // Fahrenheit to Celsius
+                stage = 6;
+                function = 5;
+                main();
+            } else if (converterAnswer2 - '0' == 2) {
+                // Celsius to Fahrenheit
+                function = 6;
+                stage = 6;
+                main();
+            } else {
+                main();
+            };
+        } else {
+            main();
+        };
+    } else if (stage == 6) {
+        log("\n");
+        log("Stage 6\n");
+        log("Function: %d\n", function);
+    };
 
     return 0;
 };
