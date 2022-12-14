@@ -452,6 +452,9 @@ int main() {
                         system("clear");
                     #endif
 
+                    log("Area of Triangle\n");
+                    log("\n");
+
                     float b, h ,A;
                     log("Enter the value lenght of the base: ");
                     scanf(" %f", &b);
@@ -485,6 +488,9 @@ int main() {
                     #else
                         system("clear");
                     #endif
+
+                    log("Area of Rectangle\n");
+                    log("\n");
 
                     float radius, area;
                     log("Enter the radius of the circle: ");
@@ -522,6 +528,10 @@ int main() {
                     #else
                         system("clear");
                     #endif
+
+                    log("Pre-Increment\n");
+                    log("\n");
+
                     int x, y, z;
                     log(" Input the value of X: ");
                     scanf(" %d", &x);
@@ -562,6 +572,10 @@ int main() {
                     #else
                         system("clear");
                     #endif
+
+                    log("Post-Increment\n");
+                    log("\n");
+
                     int x, y, z, a, b, c;
                     log(" Input the value of X: ");
                     scanf(" %d", &x);
@@ -607,6 +621,10 @@ int main() {
                     #else
                         system("clear");
                     #endif
+
+                    log("Pre-Decrement\n");
+                    log("\n");
+
                     int x, y, z;
                     log(" Input the value of X: ");
                     scanf(" %d", &x);
@@ -649,6 +667,10 @@ int main() {
                     #else
                         system("clear");
                     #endif
+
+                    log("Post-Decrement\n");
+                    log("\n");
+
                     int x, y, z, a, b, c;
 
                     log("Input the value of X: ");
