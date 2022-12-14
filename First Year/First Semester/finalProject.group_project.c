@@ -67,13 +67,25 @@
  *      Division (ID: 19)
  *      Addition (ID: 20)
  *      Subtraction (ID: 21)
+ * 
+ * Increment and Decrement
+ *      Pre-Increment (ID: 22)
+ *      Post-Decrement (ID: 23)
+ *      Pre-Decrement (ID: 24)
+ *      Post-Decrement (ID: 25)
  */
 
 // 1 = welcome screen, 2 = main menu, 3 sub menu or category, 4 = sub menu or sub category, 5 = choose function, 6 = function
+// Stage 1: The welcome screen
+// Stage 2: The main menu
+// Stage 3: The sub menu or category
+// Stage 4: the menu for Converter. The program would only go to this stage if the Converter was chosen in the stage 3
+// Stage 5: All of the catetories
+// Stage 6: All of the functions
 int stage = 1;
-// 1 = area calculator, 2 = converter, 3 = color selection, 4 = resume creating system, 5 = number function, 6 = grading system, 7 = quiz system, 8 = calculator function system
+// 1 = area calculator, 2 = converter, 3 = color selection, 4 = resume creating system, 5 = number function, 6 = grading system, 7 = quiz system, 8 = calculator function system, 9 = Temperature Convert, 10 = Increment and Decrement
 int category = 0;
-// 1 = Area of Triangle, 2 = Area of Circle, 3 = Area of Rectangle, 4 = Area of Parallelogram, 5 = Fahrenheit to Celsius, 6 = Celsius To Fahrenheit, 7 = Fraction to Whole Number, 8 = Color Selection, 9 = Resume Creating System, 10 = Positive or Negative, 11 = Age Qualified Voting, 12 = Two Number Comparision, 13 = Odd or Even, 14 = Pass or Failed, 15 = Grade Calculator, 16 = Quiz System, 17 = Exponential, 18 = Multiplication, 19 = Division, 20 = Addition, 21 = Subtraction
+// 1 = Area of Triangle, 2 = Area of Circle, 3 = Area of Rectangle, 4 = Area of Parallelogram, 5 = Fahrenheit to Celsius, 6 = Celsius To Fahrenheit, 7 = Fraction to Whole Number, 8 = Color Selection, 9 = Resume Creating System, 10 = Positive or Negative, 11 = Age Qualified Voting, 12 = Two Number Comparision, 13 = Odd or Even, 14 = Pass or Failed, 15 = Grade Calculator, 16 = Quiz System, 17 = Exponential, 18 = Multiplication, 19 = Division, 20 = Addition, 21 = Subtraction, 22 = Pre-Increment, 23 = Post-Decrement, 24 = Pre-Decrement, 25 = Post-Decrement
 int function = 0;
 
 int main() {
@@ -169,6 +181,9 @@ int main() {
             " |%94s|\n"
             " |%-6s[" LIME_T "7" RESET "] %-40s[" LIME_T "8" RESET "] %-40s|\n"
             " |%94s|\n"
+            " |%94s|\n"
+            " |%-6s[" LIME_T "9" RESET "] %-84s|\n"
+            " |%94s|\n"
             " |%94s|\n",
 
             "", "",
@@ -179,6 +194,8 @@ int main() {
             "", "Number Function", "Grading System",
             "", "",
             "", "Quiz System", "Calculator Function System",
+            "", "",
+            "", "Increment and Decrement",
             "", ""
         );
         log("[=]--------------------------------------------------------------------------------------------[=]\n");
@@ -189,7 +206,7 @@ int main() {
         scanf("%c", &menuAnswer);
         category = menuAnswer;
         // convert the char to int
-        if (menuAnswer - '0' >= 1 && menuAnswer - '0' <= 8) {
+        if (menuAnswer - '0' >= 1 && menuAnswer - '0' <= 9) {
             stage = 3;
             main();
         } else {
@@ -200,6 +217,7 @@ int main() {
             case '1':
                 stage = 5;
                 log("Area Calculator\n");
+                category = 1;
                 break;
             case '2':
                 stage = 4;
@@ -218,10 +236,12 @@ int main() {
             case '5':
                 stage = 5;
                 log("Number Function\n");
+                category = 5;
                 break;
             case '6':
                 stage = 5;
-                log("Grading System\n14936702contro");
+                log("Grading System\n");
+                category = 6;
                 break;
             case '7':
                 stage = 6;
@@ -231,6 +251,12 @@ int main() {
             case '8':
                 stage = 5;
                 log("Calculator Function System\n");
+                category = 8;
+                break;
+            case '9':
+                stage = 5;
+                log("Increment and Decrement\n");
+                category = 10;
                 break;
             default:
                 break;
@@ -265,52 +291,404 @@ int main() {
             function = 7;
             main();
         } else if (converterAnswer - '0' == 1) {
-            #ifdef _WIN32
-                system("cls");
-            #else
-                system("clear");
-            #endif
-            log("\n");
-            log("[=]-----------------------------------------------[=]\n");
-            log(" |%-20sConverter%-20s|\n", "", "");
-            log("[=]-----------------------------------------------[=]\n");
-            log(
-                " |%-49s|\n"
-                " |%-6s[" LIME_T "1" RESET "] Fahrenheit to Celsius%-18s|\n"
-                " |%-49s|\n"
-                " |%-6s[" LIME_T "2" RESET "] Celsius to Fahrenheit%-18s|\n"
-                " |%-49s|\n",
-                "",
-                "", "",
-                "",
-                "", "",
-                ""
-            );
-            log("[=]-----------------------------------------------[=]\n");
-            log("\n");
-            log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
-            char converterAnswer2;
-            scanf(" %c", &converterAnswer2);
-            if (converterAnswer2 - '0' == 1) {
-                // Fahrenheit to Celsius
-                stage = 6;
-                function = 5;
-                main();
-            } else if (converterAnswer2 - '0' == 2) {
-                // Celsius to Fahrenheit
-                function = 6;
-                stage = 6;
-                main();
-            } else {
-                main();
-            };
+            // Temperature
+            stage = 5;
+            category = 9;
+            main();
         } else {
             main();
         };
+    } else if (stage == 5) {
+        char answer;
+        switch (category) {
+            case 1:
+                // Area Calculator
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+                    // Area Calculator
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(" |%-19sArea Calculator%-19s|\n", "", "");
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "1" RESET "] Triangle%-35s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "2" RESET "] Circle%-37s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "3" RESET "] Rectangle%-34s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "4" RESET "] Parallelogram%30s|\n"
+                        " |%-53s|\n",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        ""
+                    );
+                    log("[=]---------------------------------------------------[=]\n");
+                    log("\n");
+                    log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
+                    scanf(" %c", &answer);
+                } while (answer != '1' && answer != '2' && answer != '3' && answer != '4');
+                switch (answer) {
+                    case '1':
+                        // Triangle
+                        stage = 6;
+                        function = 1;
+                        break;
+                    case '2':
+                        // Circle
+                        stage = 6;
+                        function = 2;
+                        break;
+                    case '3':
+                        // Rectangle
+                        stage = 6;
+                        function = 3;
+                        break;
+                    case '4':
+                        // Parallelogram
+                        stage = 6;
+                        function = 4;
+                        break;
+                };
+                break;
+            case 5:
+                // Number Function
+                break;
+            case 6:
+                // Grading System
+                break;
+            case 8:
+                // Calculator Function System
+                break;
+            case 9:
+                // Temperature
+                break;
+            case 10:
+                // Increment and Decrement
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+                    // Increment and Decrement
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(" |%-15sIncrement and Decrement%-15s|\n", "", "");
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "1" RESET "] Pre-Increment%-30s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "2" RESET "] Post-Increment%-29s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "3" RESET "] Pre-Decrement%-30s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "4" RESET "] Post-Decrement%-29s|\n"
+                        " |%-53s|\n",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        ""
+                    );
+                    log("[=]---------------------------------------------------[=]\n");
+                    log("\n");
+                    log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
+                    scanf(" %c", &answer);
+                } while (answer != '1' && answer != '2' && answer != '3' && answer != '4');
+                switch (answer) {
+                    case '1':
+                        // Pre-Increment
+                        stage = 6;
+                        function = 22;
+                        break;
+                    case '2':
+                        // Post-Increment
+                        stage = 6;
+                        function = 23;
+                        break;
+                    case '3':
+                        // Pre-Decrement
+                        stage = 6;
+                        function = 24;
+                        break;
+                    case '4':
+                        // Post-Decrement
+                        stage = 6;
+                        function = 25;
+                        break;
+                };
+                break;
+        };
+        main();
     } else if (stage == 6) {
         log("\n");
         log("Stage 6\n");
         log("Function: %d\n", function);
+        log("\n");
+        char useAgain = 'y';
+        char goToMainMenu;
+        switch (function) {
+            case 1:
+                // Area of Triangle
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    float b, h ,A;
+                    log("Enter the value lenght of the base: ");
+                    scanf(" %f", &b);
+                    log("Enter the value height of the triangle: ");
+                    scanf(" %f", &h);
+                    A = (b * h) / 2;          // Area = (base * height) / 2
+
+                    log("The value of area is %f", A);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y] ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y] ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 2:
+                // Area of Rectangle
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    float radius, area;
+                    log("Enter the radius of the circle: ");
+                    scanf("%f", &radius);
+
+                    // Calculate the area of the circle using the formula
+                    // area = pi * radius^2
+                    area = 3.141592653 * (radius * radius);
+
+                    log("The area of the circle is: %f\n", area);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y] ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y||y] ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+
+
+            case 22:
+                // Pre-Increment
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+                    int x, y, z;
+                    log(" Input the value of X: ");
+                    scanf(" %d", &x);
+                    log(" Input the value of Y: ");
+                    scanf(" %d", &y);
+                    log(" Input the value of Z: ");
+                    scanf(" %d", &z);
+
+                    // use pre increment operator to update the value by 1
+                    ++x;
+                    ++y;
+                    ++z;
+                    log("\n The updated value of X: %d", x);
+                    log("\n The updated value of Y: %d", y);
+                    log("\n The updated value of Z: %d", z);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y] ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y] ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 23:
+                // Post-Increment
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+                    int x, y, z, a, b, c;
+                    log(" Input the value of X: ");
+                    scanf(" %d", &x);
+                    log(" Input the value of Y: ");
+                    scanf(" %d", &y);
+                    log(" Input the value of Z: ");
+                    scanf(" %d", &z);
+
+                    // use post-increment operator to update the value by 1
+                    a = x++;
+                    b = y++;
+                    c = z++;
+
+                    log("\n The updated value of a: %d", a);
+                    log("\n The updated value of b: %d", b);
+                    log("\n The updated value of c: %d", c);
+                    log("\n");
+                    log("\n The updated value of X: %d", x);
+                    log("\n The updated value of Y: %d", y);
+                    log("\n The updated value of Z: %d", z);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y] ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y] ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 24:
+                // Pre-Decrement
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+                    int x, y, z;
+                    log(" Input the value of X: ");
+                    scanf(" %d", &x);
+                    log(" Input the value of Y: ");
+                    scanf(" %d", &y);
+                    log(" Input the value of Z: ");
+                    scanf(" %d", &z);
+
+                    // use pre increment operator to update the value by 1
+                    --x;
+                    --y;
+                    --z;
+
+                    log("\n The updated value of X: %d", x);
+                    log("\n The updated value of Y: %d", y);
+                    log("\n The updated value of Z: %d", z);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y] ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y] ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 25:
+                // Post-Decrement
+                // Pre-Decrement
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+                    int x, y, z, a, b, c;
+
+                    log("Input the value of X: ");
+                    scanf(" %d", &x);
+                    log(" Input the value of Y: ");
+                    scanf(" %d", &y);
+                    log(" Input the value of Z: ");
+                    scanf(" %d", &z);
+
+                    // use post-increment operator to update the value by 1
+                    a = x--;
+                    b = y--;
+                    c = z--;
+
+                    log("\n The updated value of a: %d", a);
+                    log("\n The updated value of b: %d", b);
+                    log("\n The updated value of c: %d", c);
+                    log("\n");
+                    log("\n The updated value of X: %d", x);
+                    log("\n The updated value of Y: %d", y);
+                    log("\n The updated value of Z: %d", z);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y] ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y] ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+
+        };
     };
 
     return 0;
