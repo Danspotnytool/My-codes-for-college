@@ -201,7 +201,7 @@ int main() {
         log("[=]--------------------------------------------------------------------------------------------[=]\n");
         log("\n");
 
-        log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
+        log(YELLOW_T "Choose the number of the category you want to use > " RESET);
         char menuAnswer;
         scanf("%c", &menuAnswer);
         category = menuAnswer;
@@ -282,7 +282,7 @@ int main() {
         );
         log("[=]-----------------------------------------------[=]\n");
         log("\n");
-        log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
+        log(YELLOW_T "Choose the number of the function you want to use > " RESET);
         char converterAnswer;
         scanf(" %c", &converterAnswer);
         if (converterAnswer - '0' == 2) {
@@ -335,7 +335,7 @@ int main() {
                     );
                     log("[=]---------------------------------------------------[=]\n");
                     log("\n");
-                    log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
+                    log(YELLOW_T "Choose the number of the function you want to use > " RESET);
                     scanf(" %c", &answer);
                 } while (answer != '1' && answer != '2' && answer != '3' && answer != '4');
                 switch (answer) {
@@ -363,15 +363,211 @@ int main() {
                 break;
             case 5:
                 // Number Function
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+                    // Area Calculator
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(" |%-19sNumber Function%-19s|\n", "", "");
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "1" RESET "] Positive or Negative%-23s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "2" RESET "] Age Qualified Voting%-23s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "3" RESET "] Two Number Comparison%-22s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "4" RESET "] Odd or Even%-32s|\n"
+                        " |%-53s|\n",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        ""
+                    );
+                    log("[=]---------------------------------------------------[=]\n");
+                    log("\n");
+                    log(YELLOW_T "Choose the number of the function you want to use > " RESET);
+                    scanf(" %c", &answer);
+                } while (answer != '1' && answer != '2' && answer != '3' && answer != '4');
+                switch (answer) {
+                    case '1':
+                        // Positive or Negative
+                        stage = 6;
+                        function = 10;
+                        break;
+                    case '2':
+                        // Age Qualified Voting
+                        stage = 6;
+                        function = 11;
+                        break;
+                    case '3':
+                        // Two Number Comparison
+                        stage = 6;
+                        function = 12;
+                        break;
+                    case '4':
+                        // Odd or Even
+                        stage = 6;
+                        function = 13;
+                        break;
+                };
                 break;
             case 6:
                 // Grading System
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+                    // Area Calculator
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(" |%-19sGrading  System%-19s|\n", "", "");
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "1" RESET "] Pass or Fail%-31s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "2" RESET "] Grade Calculator%-27s|\n"
+                        " |%-53s|\n",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        ""
+                    );
+                    log("[=]---------------------------------------------------[=]\n");
+                    log("\n");
+                    log(YELLOW_T "Choose the number of the function you want to use > " RESET);
+                    scanf(" %c", &answer);
+                } while (answer != '1' && answer != '2');
+                log("\n");
+                switch (answer) {
+                    case '1':
+                        // Pass or Fail
+                        stage = 6;
+                        function = 14;
+                        break;
+                    case '2':
+                        // Grade Calculator
+                        stage = 6;
+                        function = 15;
+                        break;
+                };
                 break;
             case 8:
                 // Calculator Function System
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+                    // Area Calculator
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(" |%-13sCalculator Function  System%-13s|\n", "", "");
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "1" RESET "] Exponential%-32s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "2" RESET "] Multiplication%-29s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "3" RESET "] Division%-35s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "4" RESET "] Addition%-35s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "5" RESET "] Subtraction%-32s|\n"
+                        " |%-53s|\n",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        ""
+                    );
+                    log("[=]---------------------------------------------------[=]\n");
+                    log("\n");
+                    log(YELLOW_T "Choose the number of the function you want to use > " RESET);
+                    scanf(" %c", &answer);
+                } while (answer != '1' && answer != '2' && answer != '3' && answer != '4' && answer != '5');
+                switch (answer) {
+                    case '1':
+                        // Exponential
+                        stage = 6;
+                        function = 17;
+                        break;
+                    case '2':
+                        // Multiplication
+                        stage = 6;
+                        function = 18;
+                        break;
+                    case '3':
+                        // Division
+                        stage = 6;
+                        function = 19;
+                        break;
+                    case '4':
+                        // Addition
+                        stage = 6;
+                        function = 20;
+                        break;
+                    case '5':
+                        // Subtraction
+                        stage = 6;
+                        function = 21;
+                        break;
+                };
                 break;
             case 9:
                 // Temperature
+                do {
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(" |%-21sTemperature%-21s|\n", "", "");
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "1" RESET "] Fahrenheit to Celsius%-22s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "2" RESET "] Celsius to Fahrenheit%-22s|\n"
+                        " |%-53s|\n",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        ""
+                    );
+                    log("[=]---------------------------------------------------[=]\n");
+                    log("\n");
+                    log(YELLOW_T "Choose the number of the function you want to use > " RESET);
+                    scanf(" %c", &answer);
+                } while (answer != '1' && answer != '2');
+                switch (answer) {
+                    case '1':
+                        // Fahrenheit to Celsius
+                        stage = 6;
+                        function = 5;
+                        break;
+                    case '2':
+                        // Celsius to Fahrenheit
+                        stage = 6;
+                        function = 6;
+                        break;
+                };
                 break;
             case 10:
                 // Increment and Decrement
@@ -407,7 +603,7 @@ int main() {
                     );
                     log("[=]---------------------------------------------------[=]\n");
                     log("\n");
-                    log(YELLOW_T "Please choose the number of the function you want to use > " RESET);
+                    log(YELLOW_T "Choose the number of the function you want to use > " RESET);
                     scanf(" %c", &answer);
                 } while (answer != '1' && answer != '2' && answer != '3' && answer != '4');
                 switch (answer) {
@@ -466,12 +662,12 @@ int main() {
 
                     log("\n");
                     log("\n");
-                    log("Do you want to use this function again? [Y] ");
+                    log("Do you want to use this function again? [Y|y|*] > ");
                     scanf(" %c", &useAgain);
                 } while (useAgain == 'y' || useAgain == 'Y');
                 log("\n");
                 log("\n");
-                log("Do you want to go to the main menu? [Y] ");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
                 scanf(" %c", &goToMainMenu);
                 if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
                     stage = 2;
@@ -504,12 +700,12 @@ int main() {
 
                     log("\n");
                     log("\n");
-                    log("Do you want to use this function again? [Y|y] ");
+                    log("Do you want to use this function again? [Y|y|*] > ");
                     scanf(" %c", &useAgain);
                 } while (useAgain == 'y' || useAgain == 'Y');
                 log("\n");
                 log("\n");
-                log("Do you want to go to the main menu? [Y||y] ");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
                 scanf(" %c", &goToMainMenu);
                 if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
                     stage = 2;
@@ -518,6 +714,169 @@ int main() {
                     exit(0);
                 };
                 break;
+            case 3:
+                // Area of Rectangle
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Area of Rectangle\n");
+                    log("\n");
+
+                    float l, w, area;
+                    log("Enter the length of the rectangle: ");
+                    scanf("%f", &l);
+                    log("Enter the width of the rectangle: ");
+                    scanf("%f", &w);
+
+                    // Calculate the area of the rectangle using the formula
+                    // area = length * width
+                    area = l * w;
+
+                    log("The area of the rectangle is: %f\n", area);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 4:
+                // Area of Parallelogram
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Area of Parallelogram\n");
+                    log("\n");
+
+                    float b, h, area;
+                    log("Enter the base of the parallelogram: ");
+                    scanf("%f", &b);
+                    log("Enter the height of the parallelogram: ");
+                    scanf("%f", &h);
+
+                    // Calculate the area of the parallelogram using the formula
+                    // area = base * height
+                    area = b * h;
+
+                    log("The area of the parallelogram is: %f\n", area);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+
+
+
+            case 5:
+                // Fahrenheit to Celsius
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Fahrenheit to Celsius\n");
+                    log("\n");
+
+                    float f, c;
+                    log("Enter the temperature in Fahrenheit: ");
+                    scanf("%f", &f);
+
+                    // Calculate the temperature in Celsius using the formula
+                    // c = (f - 32) * 5/9
+                    c = (f - 32) * 5/9;
+
+                    log("The temperature in Celsius is: %f\n", c);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 6:
+                // Celsius to Fahrenheit
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Celsius to Fahrenheit\n");
+                    log("\n");
+
+                    float f, c;
+                    log("Enter the temperature in Celsius: ");
+                    scanf("%f", &c);
+
+                    // Calculate the temperature in Fahrenheit using the formula
+                    // f = (c * 9/5) + 32
+                    f = (c * 9/5) + 32;
+
+                    log("The temperature in Fahrenheit is: %f\n", f);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+
 
 
             case 22:
@@ -550,12 +909,12 @@ int main() {
 
                     log("\n");
                     log("\n");
-                    log("Do you want to use this function again? [Y] ");
+                    log("Do you want to use this function again? [Y|y|*] > ");
                     scanf(" %c", &useAgain);
                 } while (useAgain == 'y' || useAgain == 'Y');
                 log("\n");
                 log("\n");
-                log("Do you want to go to the main menu? [Y] ");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
                 scanf(" %c", &goToMainMenu);
                 if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
                     stage = 2;
@@ -599,12 +958,12 @@ int main() {
 
                     log("\n");
                     log("\n");
-                    log("Do you want to use this function again? [Y] ");
+                    log("Do you want to use this function again? [Y|y|*] > ");
                     scanf(" %c", &useAgain);
                 } while (useAgain == 'y' || useAgain == 'Y');
                 log("\n");
                 log("\n");
-                log("Do you want to go to the main menu? [Y] ");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
                 scanf(" %c", &goToMainMenu);
                 if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
                     stage = 2;
@@ -644,12 +1003,12 @@ int main() {
 
                     log("\n");
                     log("\n");
-                    log("Do you want to use this function again? [Y] ");
+                    log("Do you want to use this function again? [Y|y|*] > ");
                     scanf(" %c", &useAgain);
                 } while (useAgain == 'y' || useAgain == 'Y');
                 log("\n");
                 log("\n");
-                log("Do you want to go to the main menu? [Y] ");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
                 scanf(" %c", &goToMainMenu);
                 if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
                     stage = 2;
@@ -695,12 +1054,12 @@ int main() {
 
                     log("\n");
                     log("\n");
-                    log("Do you want to use this function again? [Y] ");
+                    log("Do you want to use this function again? [Y|y|*] > ");
                     scanf(" %c", &useAgain);
                 } while (useAgain == 'y' || useAgain == 'Y');
                 log("\n");
                 log("\n");
-                log("Do you want to go to the main menu? [Y] ");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
                 scanf(" %c", &goToMainMenu);
                 if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
                     stage = 2;
@@ -709,7 +1068,6 @@ int main() {
                     exit(0);
                 };
                 break;
-
         };
     };
 
