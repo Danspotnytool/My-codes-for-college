@@ -100,12 +100,6 @@ int main() {
         system("cls");
     #else
         system("clear");
-        if (stage == 1) {
-            system("resize -s 30 128");
-        } else if (stage == 2) {
-            system("resize -s 30 98");
-        };
-        system("clear");
     #endif
 
     if (stage == 1) {
@@ -263,24 +257,27 @@ int main() {
         };
         main();
     } else if (stage == 4) {
+        #ifdef _WIN32
+            system("mode con: cols=55 lines=13");
+        #endif
         // Special stage for Converter
         log("\n");
-        log("[=]-----------------------------------------------[=]\n");
-        log(" |%-20sConverter%-20s|\n", "", "");
-        log("[=]-----------------------------------------------[=]\n");
+        log("[=]-------------------------------------------------[=]\n");
+        log(" |%-21sConverter%-21s|\n", "", "");
+        log("[=]-------------------------------------------------[=]\n");
         log(
-            " |%-49s|\n"
-            " |%-6s[" LIME_T "1" RESET "] Temperature%-28s|\n"
-            " |%-49s|\n"
-            " |%-6s[" LIME_T "2" RESET "] Fraction to Whole Number%-15s|\n"
-            " |%-49s|\n",
+            " |%-51s|\n"
+            " |%-6s[" LIME_T "1" RESET "] Temperature%-30s|\n"
+            " |%-51s|\n"
+            " |%-6s[" LIME_T "2" RESET "] Fraction to Whole Number%-17s|\n"
+            " |%-51s|\n",
             "",
             "", "",
             "",
             "", "",
             ""
         );
-        log("[=]-----------------------------------------------[=]\n");
+        log("[=]-------------------------------------------------[=]\n");
         log("\n");
         log(YELLOW_T "Choose the number of the function you want to use > " RESET);
         char converterAnswer;
@@ -306,6 +303,7 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=16");
                     #else
                         system("clear");
                     #endif
@@ -366,6 +364,7 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=16");
                     #else
                         system("clear");
                     #endif
@@ -426,6 +425,7 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=12");
                     #else
                         system("clear");
                     #endif
@@ -469,6 +469,7 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=18");
                     #else
                         system("clear");
                     #endif
@@ -536,6 +537,12 @@ int main() {
             case 9:
                 // Temperature
                 do {
+                    #ifdef _WIN32
+                        system("cls");
+                        system("mode con: cols=57 lines=12");
+                    #else
+                        system("clear");
+                    #endif
                     log("[=]---------------------------------------------------[=]\n");
                     log(" |%-21sTemperature%-21s|\n", "", "");
                     log("[=]---------------------------------------------------[=]\n");
@@ -574,6 +581,7 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=16");
                     #else
                         system("clear");
                     #endif
@@ -633,6 +641,12 @@ int main() {
         main();
     } else if (stage == 6) {
         log("\n");
+        #ifdef _WIN32
+            system("cls");
+            system("mode con: cols=100 lines=30");
+        #else
+            system("clear");
+        #endif
         log("Stage 6\n");
         log("Function: %d\n", function);
         log("\n");
