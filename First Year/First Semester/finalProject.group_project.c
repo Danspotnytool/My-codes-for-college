@@ -100,6 +100,12 @@ int main() {
         system("cls");
     #else
         system("clear");
+        if (stage == 1) {
+            system("printf '\033[8;30;128t'");
+        } else if (stage == 2) {
+            system("printf '\033[8;30;98t'");
+        };
+        system("clear");
     #endif
 
     if (stage == 1) {
@@ -146,14 +152,13 @@ int main() {
             main();
         };
     } else if (stage == 2) {
-        log("\n");
         log("[=]--------------------------------------------------------------------------------------------[=]\n");
         log(
-            " |%-32s" BLUE_T "##   ##  ###### #    # #     #" RESET "%-32s|\n"
-            " |%-32s" BLUE_T "# # # #  #      ##   # #     #" RESET "%-32s|\n"
-            " |%-32s" BLUE_T "#  #  #  ####   # ## # #     #" RESET "%-32s|\n"
-            " |%-32s" BLUE_T "#     #  #      #   ## #     #" RESET "%-32s|\n"
-            " |%-32s" BLUE_T "#     #  ###### #    #  ##### " RESET "%-32s|\n",
+            " |%-32s" BLUE_T "##   ## ######  #    # #     #" RESET "%-32s|\n"
+            " |%-32s" BLUE_T "# # # # #       ##   # #     #" RESET "%-32s|\n"
+            " |%-32s" BLUE_T "#  #  # ####    # ## # #     #" RESET "%-32s|\n"
+            " |%-32s" BLUE_T "#     # #       #   ## #     #" RESET "%-32s|\n"
+            " |%-32s" BLUE_T "#     # ######  #    #  ##### " RESET "%-32s|\n",
             "", "",
             "", "",
             "", "",
@@ -197,7 +202,7 @@ int main() {
 
         log(YELLOW_T "Choose the number of the category you want to use > " RESET);
         char menuAnswer;
-        scanf("%c", &menuAnswer);
+        scanf(" %c", &menuAnswer);
         category = menuAnswer;
         // convert the char to int
         if (menuAnswer - '0' >= 1 && menuAnswer - '0' <= 9) {
@@ -257,27 +262,24 @@ int main() {
         };
         main();
     } else if (stage == 4) {
-        #ifdef _WIN32
-            system("mode con: cols=55 lines=13");
-        #endif
         // Special stage for Converter
         log("\n");
-        log("[=]-------------------------------------------------[=]\n");
-        log(" |%-21sConverter%-21s|\n", "", "");
-        log("[=]-------------------------------------------------[=]\n");
+        log("[=]-----------------------------------------------[=]\n");
+        log(" |%-20sConverter%-20s|\n", "", "");
+        log("[=]-----------------------------------------------[=]\n");
         log(
-            " |%-51s|\n"
-            " |%-6s[" LIME_T "1" RESET "] Temperature%-30s|\n"
-            " |%-51s|\n"
-            " |%-6s[" LIME_T "2" RESET "] Fraction to Whole Number%-17s|\n"
-            " |%-51s|\n",
+            " |%-49s|\n"
+            " |%-6s[" LIME_T "1" RESET "] Temperature%-28s|\n"
+            " |%-49s|\n"
+            " |%-6s[" LIME_T "2" RESET "] Fraction to Whole Number%-15s|\n"
+            " |%-49s|\n",
             "",
             "", "",
             "",
             "", "",
             ""
         );
-        log("[=]-------------------------------------------------[=]\n");
+        log("[=]-----------------------------------------------[=]\n");
         log("\n");
         log(YELLOW_T "Choose the number of the function you want to use > " RESET);
         char converterAnswer;
@@ -303,7 +305,6 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
-                        system("mode con: cols=57 lines=16");
                     #else
                         system("clear");
                     #endif
@@ -364,7 +365,6 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
-                        system("mode con: cols=57 lines=16");
                     #else
                         system("clear");
                     #endif
@@ -425,7 +425,6 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
-                        system("mode con: cols=57 lines=12");
                     #else
                         system("clear");
                     #endif
@@ -469,7 +468,6 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
-                        system("mode con: cols=57 lines=18");
                     #else
                         system("clear");
                     #endif
@@ -537,12 +535,6 @@ int main() {
             case 9:
                 // Temperature
                 do {
-                    #ifdef _WIN32
-                        system("cls");
-                        system("mode con: cols=57 lines=12");
-                    #else
-                        system("clear");
-                    #endif
                     log("[=]---------------------------------------------------[=]\n");
                     log(" |%-21sTemperature%-21s|\n", "", "");
                     log("[=]---------------------------------------------------[=]\n");
@@ -581,7 +573,6 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
-                        system("mode con: cols=57 lines=16");
                     #else
                         system("clear");
                     #endif
@@ -640,13 +631,16 @@ int main() {
         };
         main();
     } else if (stage == 6) {
-        log("\n");
         #ifdef _WIN32
             system("cls");
-            system("mode con: cols=100 lines=30");
+            system("mode con: cols=100 lines=50");
+            system("cls");
         #else
             system("clear");
+            system("printf '\033[8;50;100t'");
+            system("clear");
         #endif
+        log("\n");
         log("Stage 6\n");
         log("Function: %d\n", function);
         log("\n");
