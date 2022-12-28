@@ -15,6 +15,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
 #define RED_T     "\x1B[31m"
 #define GREEN_T   "\x1B[32m"
@@ -59,7 +61,7 @@
  *      Pass or Failed (ID: 14)
  *      Grade Calculator (ID: 15)
  * 
- * Quiz System (ID: 16)
+ * Simple C Quiz (ID: 16)
  * 
  * Calculator Function System
  *      Exponential (ID: 17)
@@ -83,9 +85,9 @@
 // Stage 5: All of the catetories
 // Stage 6: All of the functions
 int stage = 1;
-// 1 = area calculator, 2 = converter, 3 = color selection, 4 = resume creating system, 5 = number function, 6 = grading system, 7 = quiz system, 8 = calculator function system, 9 = Temperature Convert, 10 = Increment and Decrement
+// 1 = area calculator, 2 = converter, 3 = color selection, 4 = resume creating system, 5 = number function, 6 = grading system, 7 = Simple C Quiz, 8 = calculator function system, 9 = Temperature Convert, 10 = Increment and Decrement
 int category = 0;
-// 1 = Area of Triangle, 2 = Area of Circle, 3 = Area of Rectangle, 4 = Area of Parallelogram, 5 = Fahrenheit to Celsius, 6 = Celsius To Fahrenheit, 7 = Fraction to Whole Number, 8 = Color Selection, 9 = Resume Creating System, 10 = Positive or Negative, 11 = Age Qualified Voting, 12 = Two Number Comparision, 13 = Odd or Even, 14 = Pass or Failed, 15 = Grade Calculator, 16 = Quiz System, 17 = Exponential, 18 = Multiplication, 19 = Division, 20 = Addition, 21 = Subtraction, 22 = Pre-Increment, 23 = Post-Decrement, 24 = Pre-Decrement, 25 = Post-Decrement
+// 1 = Area of Triangle, 2 = Area of Circle, 3 = Area of Rectangle, 4 = Area of Parallelogram, 5 = Fahrenheit to Celsius, 6 = Celsius To Fahrenheit, 7 = Fraction to Whole Number, 8 = Color Selection, 9 = Resume Creating System, 10 = Positive or Negative, 11 = Age Qualified Voting, 12 = Two Number Comparision, 13 = Odd or Even, 14 = Pass or Failed, 15 = Grade Calculator, 16 = Simple C Quiz, 17 = Exponential, 18 = Multiplication, 19 = Division, 20 = Addition, 21 = Subtraction, 22 = Pre-Increment, 23 = Post-Decrement, 24 = Pre-Decrement, 25 = Post-Decrement
 int function = 0;
 
 int main() {
@@ -192,7 +194,7 @@ int main() {
             "", "",
             "", "Number Function", "Grading System",
             "", "",
-            "", "Quiz System", "Calculator Function System",
+            "", "Simple C Quiz", "Calculator Function System",
             "", "",
             "", "Increment and Decrement",
             "", ""
@@ -245,7 +247,7 @@ int main() {
             case '7':
                 stage = 6;
                 function = 16;
-                log("Quiz System\n");
+                log("Simple C Quiz\n");
                 break;
             case '8':
                 stage = 5;
@@ -886,6 +888,1244 @@ int main() {
                 break;
 
 
+            
+            case 7:
+                // Fraction to Whole Number
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Fraction to Whole Number\n");
+                    log("\n");
+
+                    int n, d, w;
+                    log("Enter the numerator: ");
+                    scanf("%d", &n);
+                    log("Enter the denominator: ");
+                    scanf("%d", &d);
+
+                    // Calculate the whole number using the formula
+                    // w = numerator / denominator
+                    w = n / d;
+
+                    log("The whole number is: %d\n", w);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+
+
+
+            case 8:
+                // Color Selection
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Color Selection\n");
+                    log("\n");
+                    char color;
+                    log("Enter a color: ");
+                    scanf(" %c", &color);
+
+                    log("Equivalent color of %c is ", color);
+                    switch (color) {
+                        case 'b':
+                        case 'B':
+                            log("Blue");
+                            break;
+                        case 'r':
+                        case 'R':
+                            log("Red");
+                            break;
+                        case 'g':
+                        case 'G':
+                            log("Green");
+                            break;
+                        case 'y':
+                        case 'Y':
+                            log("Yellow");
+                            break;
+                        case 'v':
+                        case 'V':
+                            log("Violet");
+                            break;
+                        case 'p':
+                        case 'P':
+                            log("Pink");
+                            break;
+                        default:
+                            log("Unknown color");
+                            break;
+                    };
+                    log("\n");
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+
+
+
+            case 9:
+                // Resume Creating System
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                        system("mode con: cols=73 lines=50");
+                        system("cls");
+                    #else
+                        system("clear");
+                        system("printf '\033[8;50;73t'");
+                        system("clear");
+                    #endif
+
+                    char contact[20], name[50], birthday[50], address[50], email[50], citizenship[50], fatherName[50], motherName[50], primarySchool[50], secondarySchool[50], tertiarySchool[50], firstChoice[50], secondChoice[50], thirdChoice[50];
+                    int age;
+
+                    log("--------------------------- REGISTRATION FORM ---------------------------\n\n");
+                    log("NAME: ");
+                    scanf(" %50[^\n]", name);
+                    log("AGE: ");
+                    scanf("%d", &age);
+                    log("BIRTHDAY: ");
+                    scanf(" %50[^\n]", birthday);
+                    log("ADDRESS: ");
+                    scanf(" %50[^\n]", address);
+                    log("CONTACT NO.: ");
+                    scanf("%s", contact);
+                    log("EMAIL: ");
+                    scanf(" %50[^\n]", email);
+                    log("CITIZENSHIP: ");
+                    scanf(" %50[^\n]", citizenship);
+                    log("FATHER'S NAME: ");
+                    scanf(" %50[^\n]", fatherName);
+                    log("MOTHER'S NAME: ");
+                    scanf(" %50[^\n]", motherName);
+
+                    log("-------------------------- EDUCATIONAL ATTAINMENT -----------------------\n");
+                    log("\n");
+                    log("\n");
+                    log("PRIMARY: ");
+                    scanf(" %50[^\n]", primarySchool);
+                    log("SECONDARY: ");
+                    scanf(" %50[^\n]", secondarySchool);
+                    log("TERTIARY: ");
+                    scanf(" %50[^\n]", tertiarySchool);
+                    log("\n");
+                    log("1ST CHOICE: ");
+                    scanf(" %50[^\n]", firstChoice);
+                    log("2ND CHOICE: ");
+                    scanf(" %50[^\n]", secondChoice);
+                    log("3RD CHOICE: ");
+                    scanf(" %50[^\n]", thirdChoice);
+
+                    
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("--------------------------- REGISTRATION FORM ---------------------------\n");
+                    log("\n");
+                    log("Name: %s\n", name);
+                    log("\n");
+                    log("Age: %d\n", age);
+                    log("\n");
+                    log("Birthday: %s\n", birthday);
+                    log("\n");
+                    log("Address: %s\n", address);
+                    log("\n");
+                    log("Contact: %s\n", contact);
+                    log("\n");
+                    log("Email: %s\n", email);
+                    log("\n");
+                    log("Citizenship: %s\n", citizenship);
+                    log("\n");
+                    log("Father's name: %s\n", fatherName);
+                    log("\n");
+                    log("Mother's name: %s\n", motherName);
+                    log("\n");
+                    log("-------------------------- EDUCATIONAL ATTAINMENT -----------------------\n");
+                    log("\n");
+                    log("Primary: %s\n", primarySchool);
+                    log("\n");
+                    log("Secondary: %s\n", secondarySchool);
+                    log("\n");
+                    log("Tertiary: %s\n", tertiarySchool);
+                    log("\n");
+                    log("\n");
+                    log("First choice: %s\n", firstChoice);
+                    log("\n");
+                    log("Second choice: %s\n", secondChoice);
+                    log("\n");
+                    log("Third choice: %s\n", thirdChoice);
+                    log("\n");
+                    log("-------------------------------------------------------------------------\n");
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+
+
+            
+            case 10:
+                // Positive or Negative
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Positive or Negative\n");
+                    log("\n");
+
+                    int number;
+                    log("\tInput a number: ");
+                    scanf(" %d", &number);
+
+                    log("\n");
+                    if (number > 0) {
+                        log("\tThe number is positive.\n");
+                    } else if (number < 0) {
+                        log("\tThe number is negative.\n");
+                    } else {
+                        log("\tThe number is zero.\n");
+                    };
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 11:
+                // Age Qualified Voting
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Age Qualified Voting\n");
+                    log("\n");
+
+                    int age;
+                    log("\tInput your age: ");
+                    scanf(" %d", &age);
+
+                    log("\n");
+                    if (age >= 18) {
+                        log("\tYou are eligible to vote.\n");
+                    } else {
+                        log("\tYou are not eligible to vote.\n");
+                    };
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 12:
+                // Two Numbers Comparison
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Two Numbers Comparison\n");
+                    log("\n");
+                    int A, B;
+
+                    log("\tEnter value of A: ");
+                    scanf("%d", &A);
+
+                    log("\tEnter value of B: ");
+                    scanf("%d", &B);
+
+                    log("\n");
+                    if (A > B) {
+                        log("\t%d is greater than %d", A, B);
+                    };
+                    if (B > A) {
+                        log("\t%d is greater than %d", B, A);
+                    };
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 13:
+                // Odd or Even
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Odd or Even\n");
+                    log("\n");
+
+                    int number;
+                    log("\tInput a number: ");
+                    scanf(" %d", &number);
+
+                    log("\n");
+                    if (number % 2 == 0) {
+                        log("\tThe number is even.\n");
+                    } else {
+                        log("\tThe number is odd.\n");
+                    };
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+
+
+            
+            case 14:
+                // Pass or Failed
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Pass or Failed\n");
+                    log("\n");
+
+                    float G;
+                    char P[] = "You passed! Congratulations!";
+                    char F[] = "You failed! Better luck next time!";
+
+                    log("\tEnter grade: ");
+                    scanf(" %f", &G);
+
+                    log("\n");
+                    if (G >= 75) {
+                        log("\t%s", P);
+                    } else {
+                        log("\t%s", F);
+                    };
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 15:
+                // Grade Calculator
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Grade Calculator\n");
+                    log("\n");
+
+                    float grade;
+                    log("\tEnter your grade: ");
+                    scanf(" %.2f", &grade);
+
+                    if (grade >= 90 && grade <= 100) {
+                        log("\tYou got an A!");
+                    } else if (grade >= 80 && grade < 90) {
+                        log("\tYou got a B!");
+                    } else if (grade >= 70 && grade < 80) {
+                        log("\tYou got a C!");
+                    } else if (grade >= 60 && grade < 70) {
+                        log("\tYou got a D!");
+                    } else if (grade >= 0 && grade < 60) {
+                        log("\tYou got an F!");
+                    } else {
+                        log("\tOut of range!");
+                    };
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            
+            case 16:
+                // Simple C Quiz
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    // Introduction
+                    log(BLUE_T "Welcome to the Simple C Quiz!\n" RESET);
+                    log("This quiz will test your knowledge on the C programming language.\n");
+                    log("All of your " GREEN_T "answers must be in UPPERCASE" RESET " only.\n");
+                    log("\n");
+
+                    // Getting the user's name and section
+                    char name[100];
+                    char section[20];
+                    log("Enter your name: ");
+                    scanf(" %100[^\n]", name);
+                    log("\n");
+                    log("Enter your section: ");
+                    scanf(" %20[^\n]", section);
+
+                    // Clearing the screen
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    // Initialization of the score
+                    int part1_score = 0,
+                        part2_score = 0,
+                        total_score;
+
+                    // All of the questions
+                    char part1_question1[210] = " 1. Who is the father of C Progmramming Language?\n\tA. DENNIS RITCHIE\n\tB. MARIAN RIVERA\n\tC. DENNIS RITCHEI\n\tD. DENNIS RITCHEESE\n",
+                        part1_question2[210] = " 2. What year does C language was first developed?\n\tA. 1872\n\tB. 1972\n\tC. 1892\n\tD. 1982\n",
+                        part1_question3[210] = " 3. It reads the entire program and converts it into a form that can be executed by the computer.\n\tA. LIBRARY\n\tB. RUN TIME\n\tC. INTERPRETER\n\tD. COMPILER\n",
+                        part1_question4[210] = " 4. Refer to the event that occur while the program is actually executing.\n\tA. INTERPRETER TIME\n\tB. SWITCH TIME\n\tC. COMPILE TIME\n\tD. RUN TIME\n",
+                        part1_question5[210] = " 5. A line character that is used to move the cursor to the next line.\n\tA. %%\n\tB. \\n\n\tC. \"\"\n\tD. &\n",
+                        part1_question6[210] = " 6. It is used to identify the input, process, and output function.\n\tA. BLUEPRINT\n\tB. DEFINE DIRECTIVES\n\tC. FLOWCHARTING\n\tD. PREPARATION\n",
+                        part1_question7[210] = " 7. Program statement used for handling data from the user\n\tA. INPUT STATEMENT\n\tB. OUTPUT STATEMENT\n\tC. INSIDE INPUT\n\tD. OUTSIDE STATEMENT\n",
+                        part1_question8[210] = " 8. One of the types of variables that change their value after processing.\n\tA. FATAL VARIABLE\n\tB. DESTRUCTIVE VARIABLE\n\tC. DEVASTATIVE VARIABLE\n\tD. DEDUCTIVE VARIABLE\n",
+                        part1_question9[210] = " 9. In the arithmetic-logic unit (which is within the CPU), mathematical operation like: addition, subtraction, multiplication, and division are done.\n\tA. HITLEVEL\n\tB. GIT LEVEL\n\tC. BIT LEVEL\n\tD. KIIT\n",
+                        part1_question10[210] = "10. Used for the computer to choose one and only one of the given choices.\n\tA. TEMPORIZE IF STATEMENT\n\tB. LINEARIZE IF ELSE IF STATEMENT\n\tC. NESTED STATEMENT\n\tD. LADDERIZED IF ELSE IF STATEMENT\n",
+
+                        part2_question1[210] = " 1. A primary storage location that can hold different numeric or alphanumeric values.\n",
+                        part2_question2[210] = " 2. A finite set of instructions that specify a sequence of operations to be carried out in order to solve a specific problem or class of problems.\n",
+                        part2_question3[210] = " 3. A logical operator that if both the operands are non-zero, then the condition becomes true.\n",
+                        part2_question4[210] = " 4. In this conditional statement, there are two given choices the computer could make. Futhermore, the computer could only choose one of them.\n",
+                        part2_question5[210] = " 5. It is used for testing program and locating programming errors.\n",
+                        part2_question6[210] = " 6. It represents text, computer processor instructions, or any other data using a two-symbol system.\n",
+                        part2_question7[210] = " 7. If any of the two operands is non-zero, then the condition becomes true.\n",
+                        part2_question8[210] = " 8. Variables that maintain its value after processing.\n",
+                        part2_question9[210] = " 9. Used to display the argument list on the monitor.\n",
+                        part2_question10[210] = "10. A programming language construct or operator that tests or defines some kind of relation between two entities.\n";
+
+                    // All of the answers for all of the questions
+                    char part1_answer1 = 'A',
+                        part1_answer2 = 'B',
+                        part1_answer3 = 'D',
+                        part1_answer4 = 'D',
+                        part1_answer5 = 'B',
+                        part1_answer6 = 'C',
+                        part1_answer7 = 'A',
+                        part1_answer8 = 'B',
+                        part1_answer9 = 'C',
+                        part1_answer10 = 'D',
+
+                        part2_answer1[50] = "VARIABLE",
+                        part2_answer2[50] = "ALGORITHM",
+                        part2_answer3[50] = "AND",
+                        part2_answer4[50] = "SIMPLE IF ELSE STATEMENT",
+                        part2_answer5[50] = "DEBUGGER",
+                        part2_answer6[50] = "BINARY CODE",
+                        part2_answer7[50] = "OR",
+                        part2_answer8[50] = "CONSTRUCTIVE VARIABLE",
+                        part2_answer9[50] = "OUTPUT STATEMENT",
+                        part2_answer10[50] = "RELATIONAL OPERATIONS";
+                    // All of the responses for all of the questions
+                    char part1_response1,
+                        part1_response2,
+                        part1_response3,
+                        part1_response4,
+                        part1_response5,
+                        part1_response6,
+                        part1_response7,
+                        part1_response8,
+                        part1_response9,
+                        part1_response10,
+
+                        part2_response1[50],
+                        part2_response2[50],
+                        part2_response3[50],
+                        part2_response4[50],
+                        part2_response5[50],
+                        part2_response6[50],
+                        part2_response7[50],
+                        part2_response8[50],
+                        part2_response9[50],
+                        part2_response10[50];
+
+                    // Instructions
+                    log("Part 1: Multiple Choice\n");
+                    log("All of your " GREEN_T "answers must be in uppercase" RESET " only.\n\n");
+
+                    // Part 1
+                    log("%s", part1_question1);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response1);
+                    if (part1_response1 == part1_answer1) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response1);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response1);
+                    }; log("\n");
+                    log("%s", part1_question2);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response2);
+                    if (part1_response2 == part1_answer2) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response2);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response2);
+                    }; log("\n");
+                    log("%s", part1_question3);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response3);
+                    if (part1_response3 == part1_answer3) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response3);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response3);
+                    }; log("\n");
+                    log("%s", part1_question4);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response4);
+                    if (part1_response4 == part1_answer4) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response4);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response4);
+                    }; log("\n");
+                    log("%s", part1_question5);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response5);
+                    if (part1_response5 == part1_answer5) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response5);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response5);
+                    }; log("\n");
+                    log("%s", part1_question6);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response6);
+                    if (part1_response6 == part1_answer6) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response6);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response6);
+                    }; log("\n");
+                    log("%s", part1_question7);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response7);
+                    if (part1_response7 == part1_answer7) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response7);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response7);
+                    }; log("\n");
+                    log("%s", part1_question8);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response8);
+                    if (part1_response8 == part1_answer8) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response8);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response8);
+                    }; log("\n");
+                    log("%s", part1_question9);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response9);
+                    if (part1_response9 == part1_answer9) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response9);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response9);
+                    }; log("\n");
+                    log("%s", part1_question10);
+                    log("Your answer: ");
+                    scanf(" %c", &part1_response10);
+                    if (part1_response10 == part1_answer10) {
+                        log("The answer " GREEN_T "%c" RESET " is correct!\n", part1_response10);
+                        part1_score++;
+                    } else {
+                        log("The answer " RED_T "%c" RESET " is incorrect!\n", part1_response10);
+                    }; log("\n");
+
+                    // Clearing the screen
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    // Instructions
+                    log("Part 2: Identification\n");
+                    log("All of your " GREEN_T "answers must be in uppercase" RESET " only.\n\n");
+
+                    // Part 2
+                    log("%s", part2_question1);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response1);
+                    if (strcmp(part2_response1, part2_answer1) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response1);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response1);
+                    }; log("\n");
+                    log("%s", part2_question2);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response2);
+                    if (strcmp(part2_response2, part2_answer2) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response2);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response2);
+                    }; log("\n");
+                    log("%s", part2_question3);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response3);
+                    if (strcmp(part2_response3, part2_answer3) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response3);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response3);
+                    }; log("\n");
+                    log("%s", part2_question4);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response4);
+                    if (strcmp(part2_response4, part2_answer4) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response4);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response4);
+                    }; log("\n");
+                    log("%s", part2_question5);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response5);
+                    if (strcmp(part2_response5, part2_answer5) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response5);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response5);
+                    }; log("\n");
+                    log("%s", part2_question6);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response6);
+                    if (strcmp(part2_response6, part2_answer6) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response6);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response6);
+                    }; log("\n");
+                    log("%s", part2_question7);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response7);
+                    if (strcmp(part2_response7, part2_answer7) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response7);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response7);
+                    }; log("\n");
+                    log("%s", part2_question8);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response8);
+                    if (strcmp(part2_response8, part2_answer8) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response8);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response8);
+                    }; log("\n");
+                    log("%s", part2_question9);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response9);
+                    if (strcmp(part2_response9, part2_answer9) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response9);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response9);
+                    }; log("\n");
+                    log("%s", part2_question10);
+                    log("Your answer: ");
+                    scanf(" %50[^\n]", part2_response10);
+                    if (strcmp(part2_response10, part2_answer10) == 0) {
+                        log("The answer " GREEN_T "%s" RESET " is correct!\n", part2_response10);
+                        part2_score++;
+                    } else {
+                        log("The answer " RED_T "%s" RESET " is incorrect!\n", part2_response10);
+                    }; log("\n");
+
+                    // Total score
+                    total_score = part1_score + part2_score;
+
+                    // Clearing the screen
+                    #ifdef _WIN32
+                        system("cls");
+                        system("mode con: cols=42 lines=50");
+                        system("cls");
+                    #else
+                        system("clear");
+                        system("printf '\033[8;50;42t'");
+                        system("clear");
+                    #endif
+
+                    // Show the result into a card form
+                    // User's information
+                    log("|########################################|\n");
+                    log("| Name: " BLUE_T "%-33s" RESET, name);
+                    log("|\n", " ");
+                    log("| Section: " BLUE_T "%-30s" RESET, section);
+                    log("|\n", " ");
+                    log("|########################################|\n");
+                    log("|                 Result                 |\n");
+                    log("|########################################|\n");
+                    log("| Part 1:%-32s|\n", "");
+                    if (part1_response1 == part1_answer1) {
+                        log("|  1. %c  -  ", part1_answer1);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  1. %c  -  ", part1_response1);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET,part1_answer1 );
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    if (part1_response2 == part1_answer2) {
+                        log("|  2. %c  -  ", part1_answer2);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  2. %c  -  ", part1_response2);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET,part1_answer2 );
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    if (part1_response3 == part1_answer3) {
+                        log("|  3. %c  -  ", part1_answer3);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  3. %c  -  ", part1_response3);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET,part1_answer3 );
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    if (part1_response4 == part1_answer4) {
+                        log("|  4. %c  -  ", part1_answer4);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  4. %c  -  ", part1_response4);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET,part1_answer4 );
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    if (part1_response5 == part1_answer5) {
+                        log("|  5. %c  -  ", part1_answer5);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  5. %c  -  ", part1_response5);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET,part1_answer5 );
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    if (part1_response6 == part1_answer6) {
+                        log("|  6. %c  -  ", part1_answer6);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  6. %c  -  ", part1_response6);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET,part1_answer6 );
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    if (part1_response7 == part1_answer7) {
+                        log("|  7. %c  -  ", part1_answer7);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  7. %c  -  ", part1_response7);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET,part1_answer7 );
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    if (part1_response8 == part1_answer8) {
+                        log("|  8. %c  -  ", part1_answer8);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  8. %c  -  ", part1_response8);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET,part1_answer8 );
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    if (part1_response9 == part1_answer9) {
+                        log("|  9. %c  -  ", part1_answer9);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  9. %c  -  ", part1_response9);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET,part1_answer9 );
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    if (part1_response10 == part1_answer10) {
+                        log("| 10. %c  -  ",  part1_answer10);
+                        log(GREEN_T "Correct" RESET "%-22s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("| 10. %c  -  ",  part1_response10);
+                        log(RED_T "Incorrect" RESET "%-20s|\n", "");
+                        log("|       Answer: " GREEN_T "%c" RESET, part1_answer10);
+                        log("%-24s|\n", "");
+                        log("|%-40s|\n", "");
+                    };
+                    log("|----------------------------------------|\n");
+                    log("| Score: %-32d|\n", part1_score);
+                    log("|----------------------------------------|\n");
+
+                    log("| Part 2:%-32s|\n", "");
+                    if (strcmp(part2_response1, part2_answer1) == 0) {
+                        log("|  1. %-25s", part2_response1);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  1. %-25s", part2_response1);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer1);
+                        log("|%-40s|\n", "");
+                    };
+                    if (strcmp(part2_response2, part2_answer2) == 0) {
+                        log("|  2. %-25s", part2_response2);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  2. %-25s", part2_response2);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer2);
+                        log("|%-40s|\n", "");
+                    };
+                    if (strcmp(part2_response3, part2_answer3) == 0) {
+                        log("|  3. %-25s", part2_response3);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  3. %-25s", part2_response3);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer3);
+                        log("|%-40s|\n", "");
+                    };
+                    if (strcmp(part2_response4, part2_answer4) == 0) {
+                        log("|  4. %-25s", part2_response4);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  4. %-25s", part2_response4);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer4);
+                        log("|%-40s|\n", "");
+                    };
+                    if (strcmp(part2_response5, part2_answer5) == 0) {
+                        log("|  5. %-25s", part2_response5);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  5. %-25s", part2_response5);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer5);
+                        log("|%-40s|\n", "");
+                    };
+                    if (strcmp(part2_response6, part2_answer6) == 0) {
+                        log("|  6. %-25s", part2_response6);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  6. %-25s", part2_response6);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer6);
+                        log("|%-40s|\n", "");
+                    };
+                    if (strcmp(part2_response7, part2_answer7) == 0) {
+                        log("|  7. %-25s", part2_response7);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  7. %-25s", part2_response7);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer7);
+                        log("|%-40s|\n", "");
+                    };
+                    if (strcmp(part2_response8, part2_answer8) == 0) {
+                        log("|  8. %-25s", part2_response8);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  8. %-25s", part2_response8);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer8);
+                        log("|%-40s|\n", "");
+                    };
+                    if (strcmp(part2_response9, part2_answer9) == 0) {
+                        log("|  9. %-25s", part2_response9);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("|  9. %-25s", part2_response9);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer9);
+                        log("|%-40s|\n", "");
+                    };
+                    if (strcmp(part2_response10, part2_answer10) == 0) {
+                        log("| 10. %-25s", part2_response10);
+                        log(GREEN_T "Correct" RESET "%-3s|\n", "");
+                    } else {
+                        log("|%-40s|\n", "");
+                        log("| 10. %-25s", part2_response10);
+                        log(RED_T "Incorrect" RESET "%-1s|\n", "");
+                        log("|       Answer: " GREEN_T "%-25s" RESET "|\n", part2_answer10);
+                        log("|%-40s|\n", "");
+                    };
+
+                    log("|----------------------------------------|\n");
+                    log("| Score: %-32d|\n", part2_score);
+                    log("|----------------------------------------|\n");
+                    log("|########################################|\n");
+                    log("| Total Score: %-26d|\n", total_score);
+                    log("|########################################|\n");
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                break;
+
+
+
+            case 17:
+                // Exponential
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Exponential\n");
+                    log("\n");
+
+                    int base, exponent;
+                    log("\tInput the base: ");
+                    scanf(" %d", &base);
+                    log("\tInput the exponent: ");
+                    scanf(" %d", &exponent);
+
+                    int result = pow(base, exponent);
+
+                    log("\n");
+                    log("The result of %d to the power of %d is: %d\n", base, exponent, result);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 18:
+                // Multiplication
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Multiplication\n");
+                    log("\n");
+
+                    float num1, num2, result;
+                    log("\tInput the first number: ");
+                    scanf(" %d", &num1);
+                    log("\tInput the second number: ");
+                    scanf(" %d", &num2);
+
+                    result = num1 * num2;
+
+                    log("\n");
+                    log("The result of %d * %d is: %d\n", num1, num2, result);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 19:
+                // Division
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Division\n");
+                    log("\n");
+
+                    float num1, num2, result;
+                    log("\tInput the first number: ");
+                    scanf(" %d", &num1);
+                    log("\tInput the second number: ");
+                    scanf(" %d", &num2);
+
+                    log("\n");
+                    if (num2 == 0) {
+                        log("You cannot divide by 0!\n");
+                    } else {
+                        result = num1 / num2;
+                        log("The result of %d / %d is: %d\n", num1, num2, result);
+                    };
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 20:
+                // Addition
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Addition\n");
+                    log("\n");
+
+                    float num1, num2, result;
+                    log("\tInput the first number: ");
+                    scanf(" %d", &num1);
+                    log("\tInput the second number: ");
+                    scanf(" %d", &num2);
+
+                    result = num1 + num2;
+
+                    log("\n");
+                    log("The result of %d + %d is: %d\n", num1, num2, result);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 21:
+                // Subtraction
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Subtraction\n");
+                    log("\n");
+
+                    float num1, num2, result;
+                    log("\tInput the first number: ");
+                    scanf(" %d", &num1);
+                    log("\tInput the second number: ");
+                    scanf(" %d", &num2);
+
+                    result = num1 - num2;
+
+                    log("\n");
+                    log("The result of %d - %d is: %d\n", num1, num2, result);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
 
             case 22:
                 // Pre-Increment
