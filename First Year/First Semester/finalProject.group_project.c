@@ -265,23 +265,31 @@ int main() {
         main();
     } else if (stage == 4) {
         // Special stage for Converter
-        log("\n");
-        log("[=]-----------------------------------------------[=]\n");
-        log(" |%-20sConverter%-20s|\n", "", "");
-        log("[=]-----------------------------------------------[=]\n");
+        #ifdef _WIN32
+            system("cls");
+            system("mode con: cols=55 lines=14");
+            system("cls");
+        #else
+            system("clear");
+            system("printf '\033[8;14;55t'");
+            system("clear");
+        #endif
+        log("[=]-------------------------------------------------[=]\n");
+        log(" |%-21sConverter%-21s|\n", "", "");
+        log("[=]-------------------------------------------------[=]\n");
         log(
-            " |%-49s|\n"
-            " |%-6s[" LIME_T "1" RESET "] Temperature%-28s|\n"
-            " |%-49s|\n"
-            " |%-6s[" LIME_T "2" RESET "] Fraction to Whole Number%-15s|\n"
-            " |%-49s|\n",
+            " |%-51s|\n"
+            " |%-6s[" LIME_T "1" RESET "] Temperature%-30s|\n"
+            " |%-51s|\n"
+            " |%-6s[" LIME_T "2" RESET "] Fraction to Whole Number%-17s|\n"
+            " |%-51s|\n",
             "",
             "", "",
             "",
             "", "",
             ""
         );
-        log("[=]-----------------------------------------------[=]\n");
+        log("[=]-------------------------------------------------[=]\n");
         log("\n");
         log(YELLOW_T "Choose the number of the function you want to use > " RESET);
         char converterAnswer;
@@ -307,7 +315,11 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=19");
+                        system("cls");
                     #else
+                        system("clear");
+                        system("printf '\033[8;19;57t'");
                         system("clear");
                     #endif
                     // Area Calculator
@@ -367,7 +379,11 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=19");
+                        system("cls");
                     #else
+                        system("clear");
+                        system("printf '\033[8;19;57t'");
                         system("clear");
                     #endif
                     // Area Calculator
@@ -427,7 +443,11 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=14");
+                        system("cls");
                     #else
+                        system("clear");
+                        system("printf '\033[8;14;57t'");
                         system("clear");
                     #endif
                     // Area Calculator
@@ -470,7 +490,11 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=21");
+                        system("cls");
                     #else
+                        system("clear");
+                        system("printf '\033[8;21;57t'");
                         system("clear");
                     #endif
                     // Area Calculator
@@ -537,6 +561,15 @@ int main() {
             case 9:
                 // Temperature
                 do {
+                    #ifdef _WIN32
+                        system("cls");
+                        system("mode con: cols=57 lines=14");
+                        system("cls");
+                    #else
+                        system("clear");
+                        system("printf '\033[8;14;57t'");
+                        system("clear");
+                    #endif
                     log("[=]---------------------------------------------------[=]\n");
                     log(" |%-21sTemperature%-21s|\n", "", "");
                     log("[=]---------------------------------------------------[=]\n");
@@ -575,7 +608,11 @@ int main() {
                 do {
                     #ifdef _WIN32
                         system("cls");
+                        system("mode con: cols=57 lines=19");
+                        system("cls");
                     #else
+                        system("clear");
+                        system("printf '\033[8;19;57t'");
                         system("clear");
                     #endif
                     // Increment and Decrement
