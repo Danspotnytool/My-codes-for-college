@@ -1372,7 +1372,7 @@ int main() {
 
                     float grade;
                     log("\tEnter your grade: ");
-                    scanf(" %.2f", &grade);
+                    scanf(" %f", &grade);
 
                     if (grade >= 90 && grade <= 100) {
                         log("\tYou got an A!");
@@ -2018,14 +2018,14 @@ int main() {
 
                     float num1, num2, result;
                     log("\tInput the first number: ");
-                    scanf(" %d", &num1);
+                    scanf(" %f", &num1);
                     log("\tInput the second number: ");
-                    scanf(" %d", &num2);
+                    scanf(" %f", &num2);
 
                     result = num1 * num2;
 
                     log("\n");
-                    log("The result of %d * %d is: %d\n", num1, num2, result);
+                    log("The result of %.2f * %.2f is: %.2f\n", num1, num2, result);
 
                     log("\n");
                     log("\n");
@@ -2057,16 +2057,16 @@ int main() {
 
                     float num1, num2, result;
                     log("\tInput the first number: ");
-                    scanf(" %d", &num1);
+                    scanf(" %f", &num1);
                     log("\tInput the second number: ");
-                    scanf(" %d", &num2);
+                    scanf(" %f", &num2);
 
                     log("\n");
                     if (num2 == 0) {
                         log("You cannot divide by 0!\n");
                     } else {
                         result = num1 / num2;
-                        log("The result of %d / %d is: %d\n", num1, num2, result);
+                        log("The result of %.2f / %.2f is: %.2f\n", num1, num2, result);
                     };
 
                     log("\n");
@@ -2099,14 +2099,14 @@ int main() {
 
                     float num1, num2, result;
                     log("\tInput the first number: ");
-                    scanf(" %d", &num1);
+                    scanf(" %f", &num1);
                     log("\tInput the second number: ");
-                    scanf(" %d", &num2);
+                    scanf(" %f", &num2);
 
                     result = num1 + num2;
 
                     log("\n");
-                    log("The result of %d + %d is: %d\n", num1, num2, result);
+                    log("The result of %.2f + %.2f is: %.2f\n", num1, num2, result);
 
                     log("\n");
                     log("\n");
@@ -2138,14 +2138,14 @@ int main() {
 
                     float num1, num2, result;
                     log("\tInput the first number: ");
-                    scanf(" %d", &num1);
+                    scanf(" %f", &num1);
                     log("\tInput the second number: ");
-                    scanf(" %d", &num2);
+                    scanf(" %f", &num2);
 
                     result = num1 - num2;
 
                     log("\n");
-                    log("The result of %d - %d is: %d\n", num1, num2, result);
+                    log("The result of %.2f - %.2f is: %.2f\n", num1, num2, result);
 
                     log("\n");
                     log("\n");
