@@ -75,6 +75,10 @@
  *      Post-Decrement (ID: 23)
  *      Pre-Decrement (ID: 24)
  *      Post-Decrement (ID: 25)
+ * 
+ * Operators
+ *      Logical Operator (ID: 26)
+ *      Relational Operator (ID: 27)
  */
 
 // 1 = welcome screen, 2 = main menu, 3 sub menu or category, 4 = sub menu or sub category, 5 = choose function, 6 = function
@@ -85,9 +89,9 @@
 // Stage 5: All of the catetories
 // Stage 6: All of the functions
 int stage = 1;
-// 1 = area calculator, 2 = converter, 3 = color selection, 4 = resume creating system, 5 = number function, 6 = grading system, 7 = Simple C Quiz, 8 = calculator function system, 9 = Temperature Convert, 10 = Increment and Decrement
+// 1 = area calculator, 2 = converter, 3 = color selection, 4 = resume creating system, 5 = number function, 6 = grading system, 7 = Simple C Quiz, 8 = calculator function system, 9 = Temperature Convert, 10 = Increment and Decrement, 11 = Operators
 int category = 0;
-// 1 = Area of Triangle, 2 = Area of Circle, 3 = Area of Rectangle, 4 = Area of Parallelogram, 5 = Fahrenheit to Celsius, 6 = Celsius To Fahrenheit, 7 = Fraction to Whole Number, 8 = Color Selection, 9 = Resume Creating System, 10 = Positive or Negative, 11 = Age Qualified Voting, 12 = Two Number Comparision, 13 = Odd or Even, 14 = Pass or Failed, 15 = Grade Calculator, 16 = Simple C Quiz, 17 = Exponential, 18 = Multiplication, 19 = Division, 20 = Addition, 21 = Subtraction, 22 = Pre-Increment, 23 = Post-Decrement, 24 = Pre-Decrement, 25 = Post-Decrement
+// 1 = Area of Triangle, 2 = Area of Circle, 3 = Area of Rectangle, 4 = Area of Parallelogram, 5 = Fahrenheit to Celsius, 6 = Celsius To Fahrenheit, 7 = Fraction to Whole Number, 8 = Color Selection, 9 = Resume Creating System, 10 = Positive or Negative, 11 = Age Qualified Voting, 12 = Two Number Comparision, 13 = Odd or Even, 14 = Pass or Failed, 15 = Grade Calculator, 16 = Simple C Quiz, 17 = Exponential, 18 = Multiplication, 19 = Division, 20 = Addition, 21 = Subtraction, 22 = Pre-Increment, 23 = Post-Decrement, 24 = Pre-Decrement, 25 = Post-Decrement, 26 = Logical Operator, 27 = Relational Operator
 int function = 0;
 
 int main() {
@@ -183,7 +187,7 @@ int main() {
             " |%-6s[" LIME_T "7" RESET "] %-40s[" LIME_T "8" RESET "] %-40s|\n"
             " |%94s|\n"
             " |%94s|\n"
-            " |%-6s[" LIME_T "9" RESET "] %-84s|\n"
+            " |%-6s[" LIME_T "9" RESET "] %-40s[" LIME_T "10" RESET "] %-39s|\n"
             " |%94s|\n"
             " |%94s|\n",
 
@@ -196,18 +200,17 @@ int main() {
             "", "",
             "", "Simple C Quiz", "Calculator Function System",
             "", "",
-            "", "Increment and Decrement",
+            "", "Increment and Decrement", "Operators",
             "", ""
         );
         log("[=]--------------------------------------------------------------------------------------------[=]\n");
         log("\n");
 
         log(YELLOW_T "Choose the number of the category you want to use > " RESET);
-        char menuAnswer;
-        scanf(" %c", &menuAnswer);
+        int menuAnswer;
+        scanf(" %d", &menuAnswer);
         category = menuAnswer;
-        // convert the char to int
-        if (menuAnswer - '0' >= 1 && menuAnswer - '0' <= 9) {
+        if (menuAnswer >= 1 && menuAnswer <= 10) {
             stage = 3;
             main();
         } else {
@@ -215,49 +218,54 @@ int main() {
         };
     } else if (stage == 3) {
         switch (category) {
-            case '1':
+            case 1:
                 stage = 5;
                 log("Area Calculator\n");
                 category = 1;
                 break;
-            case '2':
+            case 2:
                 stage = 4;
                 log("Converter\n");
                 break;
-            case '3':
+            case 3:
                 stage = 6;
                 function = 8;
                 log("Color Selection\n");
                 break;
-            case '4':
+            case 4:
                 stage = 6;
                 function = 9;
                 log("Resume Creating System\n");
                 break;
-            case '5':
+            case 5:
                 stage = 5;
                 log("Number Function\n");
                 category = 5;
                 break;
-            case '6':
+            case 6:
                 stage = 5;
                 log("Grading System\n");
                 category = 6;
                 break;
-            case '7':
+            case 7:
                 stage = 6;
                 function = 16;
                 log("Simple C Quiz\n");
                 break;
-            case '8':
+            case 8:
                 stage = 5;
                 log("Calculator Function System\n");
                 category = 8;
                 break;
-            case '9':
+            case 9:
                 stage = 5;
                 log("Increment and Decrement\n");
                 category = 10;
+                break;
+            case 10:
+                stage = 5;
+                log("Operators\n");
+                category = 11;
                 break;
             default:
                 break;
@@ -664,6 +672,52 @@ int main() {
                         // Post-Decrement
                         stage = 6;
                         function = 25;
+                        break;
+                };
+                break;
+            case 11:
+                // Operators
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                        system("mode con: cols=57 lines=14");
+                        system("cls");
+                    #else
+                        system("clear");
+                        system("printf '\033[8;14;57t'");
+                        system("clear");
+                    #endif
+                    // Operators
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(" |%-22sOperators%-22s|\n", "", "");
+                    log("[=]---------------------------------------------------[=]\n");
+                    log(
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "1" RESET "] Logical Operator%-27s|\n"
+                        " |%-53s|\n"
+                        " |%-6s[" LIME_T "2" RESET "] Relational Operator%-24s|\n"
+                        " |%-53s|\n",
+                        "",
+                        "", "",
+                        "",
+                        "", "",
+                        ""
+                    );
+                    log("[=]---------------------------------------------------[=]\n");
+                    log("\n");
+                    log(YELLOW_T "Choose the number of the function you want to use > " RESET);
+                    scanf(" %c", &answer);
+                } while (answer != '1' && answer != '2');
+                switch (answer) {
+                    case '1':
+                        // Logical Operator
+                        stage = 6;
+                        function = 26;
+                        break;
+                    case '2':
+                        // Relational Operator
+                        stage = 6;
+                        function = 27;
                         break;
                 };
                 break;
@@ -2336,6 +2390,123 @@ int main() {
                     log("\n The updated value of X: %d", x);
                     log("\n The updated value of Y: %d", y);
                     log("\n The updated value of Z: %d", z);
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+
+
+
+            case 26:
+                // Logical Operator
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Logical Operator\n");
+                    log("\n");
+
+                    
+                    int x, y, a, b;
+
+                    log("\tInput the value of X: ");
+                    scanf(" %d", &x);
+                    log("\tInput the value of Y: ");
+                    scanf(" %d", &y);
+                    log("\tInput the value of A: ");
+                    scanf(" %d", &a);
+                    log("\tInput the value of B: ");
+                    scanf(" %d", &b);
+
+                    if (x < y && a == b) {
+                        log("\n");
+                        log("x (value: %d) is less tham y (value: %d) AND a (value: %d) is equal to b (value: %d)\n", x, y, a, b);
+                    };
+
+                    if (x < y || a == b) {
+                        log("\n");
+                        log("x (value: %d) is less tham y (value: %d) OR a (value: %d) is equal to b (value: %d)\n", x, y, a, b);
+                    };
+
+                    if (!(x > y && a < b)) {
+                        log("\n");
+                        log("x (value: %d) is not greater than y (value: %d) AND a (value: %d) is not less than b (value: %d)\n", x, y, a, b);
+                    };
+
+                    log("\n");
+                    log("\n");
+                    log("Do you want to use this function again? [Y|y|*] > ");
+                    scanf(" %c", &useAgain);
+                } while (useAgain == 'y' || useAgain == 'Y');
+                log("\n");
+                log("\n");
+                log("Do you want to go to the main menu? [Y|y|*] > ");
+                scanf(" %c", &goToMainMenu);
+                if (goToMainMenu == 'y' || goToMainMenu == 'Y') {
+                    stage = 2;
+                    main();
+                } else {
+                    exit(0);
+                };
+                break;
+            case 27:
+                // Relational Operator
+                do {
+                    #ifdef _WIN32
+                        system("cls");
+                    #else
+                        system("clear");
+                    #endif
+
+                    log("Relational Operator\n");
+                    log("\n");
+
+                    int x, y;
+                    log("\tInput the value of X: ");
+                    scanf(" %d", &x);
+                    log("\tInput the value of Y: ");
+                    scanf(" %d", &y);
+
+                    if (x == y) {
+                        log("\n");
+                        log("x (value: %d) is equal to y (value: %d)\n", x, y);
+                    };
+                    if (x != y) {
+                        log("\n");
+                        log("x (value: %d) is not equal to y (value: %d)\n", x, y);
+                    };
+                    if (x > y) {
+                        log("\n");
+                        log("x (value: %d) is greater than y (value: %d)\n", x, y);
+                    };
+                    if (x < y) {
+                        log("\n");
+                        log("x (value: %d) is less than y (value: %d)\n", x, y);
+                    };
+                    if (x >= y) {
+                        log("\n");
+                        log("x (value: %d) is greater than or equal to y (value: %d)\n", x, y);
+                    };
+                    if (x <= y) {
+                        log("\n");
+                        log("x (value: %d) is less than or equal to y (value: %d)\n", x, y);
+                    };
 
                     log("\n");
                     log("\n");
