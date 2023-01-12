@@ -1102,7 +1102,7 @@ int main() {
                         system("clear");
                     #endif
 
-                    char contact[20], name[50], birthday[50], address[50], email[50], citizenship[50], fatherName[50], motherName[50], primarySchool[50], secondarySchool[50], tertiarySchool[50], firstChoice[50], secondChoice[50], thirdChoice[50];
+                    char contact[50], name[50], birthday[50], address[50], email[50], citizenship[50], fatherName[50], motherName[50], primarySchool[50], secondarySchool[50], tertiarySchool[50], firstChoice[50], secondChoice[50], thirdChoice[50];
                     int age;
 
                     log("--------------------------- REGISTRATION FORM ---------------------------\n\n");
