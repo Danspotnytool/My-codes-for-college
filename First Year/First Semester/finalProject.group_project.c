@@ -753,9 +753,9 @@ int main() {
                     log("\n");
 
                     float b, h ,A;
-                    log("Enter the value lenght of the base: ");
+                    log("\tEnter the value lenght of the base: ");
                     scanf(" %f", &b);
-                    log("Enter the value height of the triangle: ");
+                    log("\tEnter the value height of the triangle: ");
                     scanf(" %f", &h);
                     A = (b * h) / 2;          // Area = (base * height) / 2
 
@@ -790,7 +790,7 @@ int main() {
                     log("\n");
 
                     float radius, area;
-                    log("Enter the radius of the circle: ");
+                    log("\tEnter the radius of the circle: ");
                     scanf("%f", &radius);
 
                     // Calculate the area of the circle using the formula
@@ -828,9 +828,9 @@ int main() {
                     log("\n");
 
                     float l, w, area;
-                    log("Enter the length of the rectangle: ");
+                    log("\tEnter the length of the rectangle: ");
                     scanf("%f", &l);
-                    log("Enter the width of the rectangle: ");
+                    log("\tEnter the width of the rectangle: ");
                     scanf("%f", &w);
 
                     // Calculate the area of the rectangle using the formula
@@ -868,9 +868,9 @@ int main() {
                     log("\n");
 
                     float b, h, area;
-                    log("Enter the base of the parallelogram: ");
+                    log("\tEnter the base of the parallelogram: ");
                     scanf("%f", &b);
-                    log("Enter the height of the parallelogram: ");
+                    log("\tEnter the height of the parallelogram: ");
                     scanf("%f", &h);
 
                     // Calculate the area of the parallelogram using the formula
@@ -912,7 +912,7 @@ int main() {
                     log("\n");
 
                     float f, c;
-                    log("Enter the temperature in Fahrenheit: ");
+                    log("\tEnter the temperature in Fahrenheit: ");
                     scanf("%f", &f);
 
                     // Calculate the temperature in Celsius using the formula
@@ -951,7 +951,7 @@ int main() {
                     log("\n");
 
                     float f, c;
-                    log("Enter the temperature in Celsius: ");
+                    log("\tEnter the temperature in Celsius: ");
                     scanf("%f", &c);
 
                     // Calculate the temperature in Fahrenheit using the formula
@@ -979,7 +979,7 @@ int main() {
                 break;
 
 
-            
+
             case 7:
                 // Fraction to Whole Number
                 do {
@@ -993,9 +993,9 @@ int main() {
                     log("\n");
 
                     int n, d, w;
-                    log("Enter the numerator: ");
+                    log("\tEnter the numerator: ");
                     scanf(" %d", &n);
-                    log("Enter the denominator: ");
+                    log("\tEnter the denominator: ");
                     scanf(" %d", &d);
 
                     // Calculate the whole number using the formula
@@ -1035,7 +1035,7 @@ int main() {
                     log("Color Selection\n");
                     log("\n");
                     char color;
-                    log("Enter a color: ");
+                    log("\tEnter a color: ");
                     scanf(" %c", &color);
 
                     log("Equivalent color of %c is ", color);
@@ -1115,7 +1115,7 @@ int main() {
                     log("ADDRESS: ");
                     scanf(" %50[^\n]", address);
                     log("CONTACT NO.: ");
-                    scanf("%s", contact);
+                    scanf(" %50[^\n]", contact);
                     log("EMAIL: ");
                     scanf(" %50[^\n]", email);
                     log("CITIZENSHIP: ");
@@ -1204,7 +1204,7 @@ int main() {
                 break;
 
 
-            
+
             case 10:
                 // Positive or Negative
                 do {
@@ -1369,7 +1369,7 @@ int main() {
                 break;
 
 
-            
+
             case 14:
                 // Pass or Failed
                 do {
@@ -1458,7 +1458,7 @@ int main() {
                     exit(0);
                 };
                 break;
-            
+
             case 16:
                 // Simple C Quiz
                 do {
@@ -1477,10 +1477,10 @@ int main() {
                     // Getting the user's name and section
                     char name[100];
                     char section[20];
-                    log("Enter your name: ");
+                    log("\tEnter your name: ");
                     scanf(" %100[^\n]", name);
                     log("\n");
-                    log("Enter your section: ");
+                    log("\tEnter your section: ");
                     scanf(" %20[^\n]", section);
 
                     // Clearing the screen
