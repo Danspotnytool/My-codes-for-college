@@ -994,9 +994,9 @@ int main() {
 
                     int n, d, w;
                     log("Enter the numerator: ");
-                    scanf("%d", &n);
+                    scanf(" %d", &n);
                     log("Enter the denominator: ");
-                    scanf("%d", &d);
+                    scanf(" %d", &d);
 
                     // Calculate the whole number using the formula
                     // w = numerator / denominator
@@ -1109,7 +1109,7 @@ int main() {
                     log("NAME: ");
                     scanf(" %50[^\n]", name);
                     log("AGE: ");
-                    scanf("%d", &age);
+                    scanf(" %d", &age);
                     log("BIRTHDAY: ");
                     scanf(" %50[^\n]", birthday);
                     log("ADDRESS: ");
@@ -1299,10 +1299,10 @@ int main() {
                     int A, B;
 
                     log("\tEnter value of A: ");
-                    scanf("%d", &A);
+                    scanf(" %d", &A);
 
                     log("\tEnter value of B: ");
-                    scanf("%d", &B);
+                    scanf(" %d", &B);
 
                     log("\n");
                     if (A > B) {
