@@ -1477,10 +1477,10 @@ int main() {
                     // Getting the user's name and section
                     char name[100];
                     char section[20];
-                    log("\tEnter your name: ");
+                    log("Enter your name: ");
                     scanf(" %100[^\n]", name);
                     log("\n");
-                    log("\tEnter your section: ");
+                    log("Enter your section: ");
                     scanf(" %20[^\n]", section);
 
                     // Clearing the screen
