@@ -25,6 +25,11 @@ void pyramid(int n, const int size)
 
 int main(int argc, char *argv[])
 {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
 
     int size = atoi(argv[1]);
 
