@@ -137,7 +137,7 @@ public class Grades {
 
             prelimLaboratoryExamTotal = (prelimLaboratoryExam + prelimLaboratoryPerformanceTask) / 2; // Getting The
                                                                                                       // Average of
-            // quizzes
+                                                                                                      // quizzes
             prelimLaboratoryExamTotal = prelimLaboratoryExamTotal * (float) 0.01; // Converting the Average to Decimal
                                                                                   // Average
             prelimLaboratoryExamTotal = prelimLaboratoryExamTotal * prelimLaboratoryExam_Laboratory;
