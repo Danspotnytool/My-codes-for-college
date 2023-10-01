@@ -146,7 +146,7 @@ public class Grades {
             System.out.println();
 
             laboratoryGrade = performanceTaskTotal + classStandingTotal + prelimLaboratoryExamTotal;
-            System.out.println("Lecture Grade: " + laboratoryGrade);
+            System.out.println("Laboratory Grade: " + laboratoryGrade);
         }
 
         System.out.println();
