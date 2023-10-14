@@ -6,7 +6,7 @@ public class WithoutOvertime {
     private static PrintStream log = System.out;
 
     public static void main(String[] arguments) throws IOException {
-        log.println("Without Overtime or equal 40 Hours");
+        log.println("Without Overtime or equal to 40 Hours");
 
         log.println();
 

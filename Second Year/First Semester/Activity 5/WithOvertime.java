@@ -17,9 +17,9 @@ public class WithOvertime {
         double hoursWorked = Double.parseDouble(reader.readLine());
 
         double netIncome = hoursWorked * 98.64;
-        double overTimeHours = hoursWorked - 40;
-        double overTimeFees = overTimeHours * 98.64;
-        netIncome += overTimeFees;
+        double overtimeHours = hoursWorked - 40;
+        double overtimeFees = overtimeHours * 98.64;
+        netIncome += overtimeFees;
 
         double SSS = netIncome * 0.0927;
         double philHealth = netIncome * 0.0765;
@@ -30,8 +30,8 @@ public class WithOvertime {
         double netPay = netIncome - totalDeduction;
 
         log.println("Net Income: " + netIncome);
-        log.println("Overtime Hour/s: " + overTimeHours);
-        log.println("Overtime Fee/s: " + overTimeFees);
+        log.println("Overtime Hour/s: " + overtimeHours);
+        log.println("Overtime Fee/s: " + overtimeFees);
 
         log.println();
 
